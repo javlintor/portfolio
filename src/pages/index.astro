@@ -1,23 +1,30 @@
 ---
 import Badge from "../components/Badge.astro";
+import Card from "../components/Card.astro";
 import GithubIcon from "../components/icons/GithubIcon.astro";
 import LinkedInIcon from "../components/icons/LinkedInIcon.astro";
+import MailIcon from "../components/icons/MailIcon.astro";
 import SocialPill from "../components/SocialPill.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="My portfolio">
 	<main>
-		<section class="w-full lg:w-[740px] mx-auto py-44">
-			<div
-				class="relative inline-flex items-center justify-center w-10 h-10 overflow-hidden bg-orange-800 rounded-full mb-4"
-			>
-				<span class="font-medium text-gray-200">JL</span>
-			</div>
-			<div class="flex gap-x-4 pb-10 items-center">
+		<section class="w-[740px] mx-auto py-44">
+			<img
+				class="size-20 rounded-full mb-4 ring-2 ring-gray-300"
+				src="public/javlintor.jpeg"
+				alt="Default avatar"
+			/>
+			<div class="flex gap-x-4 pb-4 items-center">
 				<h1 class="text-white text-4xl font-bold">
-					Hola! Soy Javier Linares
+					Hola 👋, soy <span class="text-yellow-100/90"
+						>Javier Linares</span
+					>
 				</h1>
+			</div>
+
+			<div class="mb-4">
 				<Badge href="https://www.linkedin.com/in/javlintor"
 					>Disponible para trabajar</Badge
 				>
@@ -36,12 +43,17 @@ import Layout from "../layouts/Layout.astro";
 			<ul class="flex items-center gap-x-4">
 				<li>
 					<SocialPill href="https://github.com/javlintor">
-						<GithubIcon class="size-8" />
+						<GithubIcon class="size-8" />Github
 					</SocialPill>
 				</li>
 				<li>
 					<SocialPill href="https://www.linkedin.com/in/javlintor">
-						<LinkedInIcon class="size-8" />
+						<LinkedInIcon class="size-8" />Linkedin
+					</SocialPill>
+				</li>
+				<li>
+					<SocialPill href="mailto:jlinarestorres2@gmail.com">
+						<MailIcon class="size-8" />jlinarestorres2@gmail.com
 					</SocialPill>
 				</li>
 			</ul>
