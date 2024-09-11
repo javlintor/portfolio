@@ -1,16 +1,21 @@
 ---
 import Badge from "../components/Badge.astro";
-import Card from "../components/Card.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import Experience from "../components/Experience.astro";
 import GithubIcon from "../components/icons/GithubIcon.astro";
 import LinkedInIcon from "../components/icons/LinkedInIcon.astro";
 import MailIcon from "../components/icons/MailIcon.astro";
 import SocialPill from "../components/SocialPill.astro";
 import Layout from "../layouts/Layout.astro";
+import FactoryIcon from "../components/icons/FactoryIcon.astro";
 ---
 
-<Layout title="My portfolio">
+<Layout
+	title="Porfolio de Javier Linares - Desarrollador y Programador Freelance con experiencia en Ingeniería de datos"
+	description="Contrata a Javier Linares para trabajos Freelance relaciones con Ingeniería de Datos. Especializado en procesos ETL, AWS y Python"
+>
 	<main>
-		<section class="w-[740px] mx-auto py-44">
+		<SectionContainer class="py-20">
 			<img
 				class="size-20 rounded-full mb-4 ring-2 ring-gray-300"
 				src="public/javlintor.jpeg"
@@ -18,7 +23,7 @@ import Layout from "../layouts/Layout.astro";
 			/>
 			<div class="flex gap-x-4 pb-4 items-center">
 				<h1 class="text-white text-4xl font-bold">
-					Hola 👋, soy <span class="text-yellow-100/90"
+					Hola 👋, soy <span class="text-yellow-200/90"
 						>Javier Linares</span
 					>
 				</h1>
@@ -57,6 +62,13 @@ import Layout from "../layouts/Layout.astro";
 					</SocialPill>
 				</li>
 			</ul>
-		</section>
+		</SectionContainer>
+		<SectionContainer id="experiencia">
+			<h2 class="text-2xl font-semibold mb-6 flex gap-x-2 items-center">
+				<FactoryIcon class="size-12"/>
+				Experiencia Laboral
+			</h2>
+			<Experience />
+		</SectionContainer>
 	</main>
 </Layout>
