@@ -7,36 +7,41 @@ const EXPERIENCE = [
     {
         date: "March 2025",
         title: "Data Engineer − Freelance",
-        description: SampleText,
+        description: SampleText.slice(0, 300),
+        img: "public/freelance.png"
     },
     {
         date: "November 2022",
         title: "Data Engineer − Medida",
-        description: SampleText,
+        description: SampleText.slice(50),
         link: "/",
+        img: "public/medida.jpeg"
     },
     {
         date: "February 2022",
         title: "Data Scientist − Medida",
         description: SampleText,
         link: "/",
+        img: "public/medida.jpeg"
     },
     {
         title: "Profesor − Universidad de Sevilla",
         date: "September 2022",
-        description: SampleText,
+        description: SampleText.slice(0, 250),
         link: "/",
+        img: "public/us.png"
     },
     {
-        date: "September 2020 − Piperlab",
-        title: "Data Scientist",
-        description: SampleText,
+        date: "September 2020",
+        title: "Data Scientist − Piperlab",
+        description: SampleText.slice(30),
         link: "/",
+        img: "/public/piperlab.jpeg"
     },
 ];
 ---
 
-<ol class="relative border-s border-gray-200 dark:border-gray-700">
+<ol class="relative border-s border-gray-400 ml-4">
     {
         EXPERIENCE.map((experience) => (
             <li class="mb-10 ms-4">

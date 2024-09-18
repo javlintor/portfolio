@@ -1,0 +1,61 @@
+---
+import DjangoIcon from "./icons/DjangoIcon.astro";
+import ReactIcon from "./icons/ReactIcon.astro";
+import Project from "./Project.astro";
+
+const TAGS = {
+    React: {
+        name: "React",
+        className: "color-green-200",
+        // icon: ReactIcon,
+    },
+    Django: {
+        name: "Django",
+        className: "color-green-200",
+        // icon: DjangoIcon,
+    },
+};
+const PROJECTS = [
+    {
+        title: "Project 1",
+        description:
+            "Descriptions for project 1. Unas cuantas lineas mas para hacer la description mas larga. Otra linea mas super interesante sobre el proyecto.",
+        link: "https://stackoverflow.com/questions/43064221/typescript-ts7006-parameter-xxx-implicitly-has-an-any-type",
+        github: "#",
+        image: "http://via.placeholder.com/300x200",
+        tags: [TAGS.Django],
+    },
+    {
+        title: "Project 1",
+        description: "Occaecat Lorem amet id aliquip excepteur anim elit amet. Aute tempor laboris Lorem Lorem sit ut anim non elit Lorem fugiat. Dolore commodo ad eiusmod elit proident dolore fugiat est id. Veniam aute adipisicing veniam consequat magna tempor mollit ipsum consequat proident eiusmod velit anim. Ex excepteur velit duis non consectetur et et velit. Elit magna ea esse quis quis dolor excepteur incididunt cupidatat enim tempor.",
+        link: "https://stackoverflow.com/questions/43064221/typescript-ts7006-parameter-xxx-implicitly-has-an-any-type",
+        github: "#",
+        image: "http://via.placeholder.com/1000x400",
+        tags: [TAGS.React],
+    },
+    {
+        title: "Project 1",
+        description: "Aliquip sint ex aute nulla excepteur cupidatat officia. Exercitation aute cillum reprehenderit est do. Qui eiusmod elit non reprehenderit. Commodo tempor magna velit deserunt in dolore esse incididunt cupidatat. Quis id Lorem mollit ex laboris fugiat tempor consequat ad dolor aute est cupidatat dolore.",
+        link: "https://stackoverflow.com/questions/43064221/typescript-ts7006-parameter-xxx-implicitly-has-an-any-type",
+        github: "#",
+        image: "http://via.placeholder.com/1000x400",
+        tags: [TAGS.React],
+    },
+    {
+        title: "Project 1",
+        description: "Est reprehenderit Lorem commodo consequat cillum fugiat fugiat esse exercitation culpa fugiat incididunt. Aute qui dolore irure non esse eiusmod reprehenderit sit nostrud ex pariatur ipsum duis cupidatat. Velit nulla ad tempor culpa ullamco esse. Exercitation do occaecat nostrud veniam aliquip ex laboris deserunt voluptate ex ut amet.",
+        link: "https://stackoverflow.com/questions/43064221/typescript-ts7006-parameter-xxx-implicitly-has-an-any-type",
+        github: "#",
+        image: "http://via.placeholder.com/600x400",
+        tags: [TAGS.React],
+    },
+];
+---
+
+<div class="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 place-items-center sm:place-items-stretch">
+    {
+        PROJECTS.map(({ title, description, image, github }) => (
+            <Project title={title} description={description} image={image} github={github} />
+        ))
+    }
+</div>
