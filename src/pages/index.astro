@@ -1,93 +1,74 @@
 ---
-import Badge from "../components/Badge.astro";
-import SectionContainer from "../components/SectionContainer.astro";
-import Experience from "../components/Experience.astro";
-import GithubIcon from "../components/icons/GithubIcon.astro";
-import LinkedInIcon from "../components/icons/LinkedInIcon.astro";
-import MailIcon from "../components/icons/MailIcon.astro";
-import SocialPill from "../components/SocialPill.astro";
-import Layout from "../layouts/Layout.astro";
-import FactoryIcon from "../components/icons/FactoryIcon.astro";
-import CodeIcon from "../components/icons/CodeIcon.astro";
-import Projects from "../components/Projects.astro";
+import Badge from '../components/Badge.astro'
+import SectionContainer from '../components/SectionContainer.astro'
+import GithubIcon from '../components/icons/GithubIcon.astro'
+import LinkedInIcon from '../components/icons/LinkedInIcon.astro'
+import MailIcon from '../components/icons/MailIcon.astro'
+import SocialPill from '../components/SocialPill.astro'
+import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout
-	title="Porfolio de Javier Linares - Desarrollador y Programador Freelance con experiencia en Ingeniería de datos"
-	description="Contrata a Javier Linares para trabajos Freelance relaciones con Ingeniería de Datos. Especializado en procesos ETL, AWS y Python"
+  title="Porfolio de Javier Linares - Desarrollador y Programador Freelance con experiencia en Ingeniería de datos"
+  description="Contrata a Javier Linares para trabajos Freelance relaciones con Ingeniería de Datos. Especializado en procesos ETL y modelado de datos. Experiencia con herramientas como Apache Spark, Apache Airflow, Databricks, dbt, AWS, Azure, FastAPI, Django otras teconologías."
 >
-	<main class="px-4">
-		<SectionContainer class="pt-20 lg:pt-40">
-			<div class="flex items-center gap-4 lg:gap-8">
-				<img
-					class="size-20 rounded-full mb-4 ring-2 ring-gray-300"
-					src="public/javlintor.jpeg"
-					alt="Default avatar"
-				/>
-				<a
-					href="https://www.linkedin.com/in/javlintor"
-					target="_blank"
-					rel="noopener"
-					class="flex items-center transition md:justify-center md:hover:scale-105"
-				>
-					<Badge>Contrátame</Badge>
-				</a>
-			</div>
-			<div class="flex gap-x-4 pb-4 items-center">
-				<h1 class="text-white text-4xl lg:text-5xl font-extrabold">
-					Hola 👋, soy <span
-						class="text-transparent bg-clip-text bg-gradient-to-r to-yellow-600 from-yellow-200"
-						>Javier Linares</span
-					>
-				</h1>
-			</div>
+  <main class="px-4">
+    <SectionContainer class="pt-20 lg:pt-40">
+      <div class="flex items-center gap-4 lg:gap-8">
+        <img
+          class="mb-4 size-20 rounded-full ring-2 ring-gray-300"
+          src="javlintor.jpeg"
+          alt="Default avatar"
+        />
+        <a
+          href="https://www.linkedin.com/in/javlintor"
+          target="_blank"
+          rel="noopener"
+          class="flex items-center transition md:justify-center md:hover:scale-105"
+        >
+          <Badge>Contáctame</Badge>
+        </a>
+      </div>
+      <div class="flex items-center gap-x-4 pb-4">
+        <h1 class="text-4xl font-extrabold text-white lg:text-5xl">
+          Hola 👋, soy <span
+            class="bg-gradient-to-r from-yellow-200 to-yellow-600 bg-clip-text text-transparent"
+            >Javier Linares</span
+          >
+        </h1>
+      </div>
 
-			<h2 class="text-[#51E4B8]/70 text-2xl lg:text-3xl font-bold mb-4">
-				Freelance Data Engineer
-			</h2>
+      <h2 class="mb-4 text-2xl font-bold text-[#51E4B8]/70 lg:text-3xl">
+        Data Engineer
+      </h2>
 
-			<p class="text-xl mb-2 text-pretty">
-				<span>+ 3 años de experiencia. </span><span class="text-red-100/90"
-					>De Sevilla, España 🇪🇸.
-				</span>
-			</p>
-			<p class="text-xl  mb-8 text-pretty"><span class="text-yellow-100/90">Resuelvo problemas</span> a través de la programación</p>
+      <p class="mb-2 text-pretty text-xl">
+        <span>+ 5 años de experiencia. </span><span class="text-red-100/90"
+          >De Huelva, España 🇪🇸.
+        </span>
+      </p>
+      <p class="mb-8 text-pretty text-xl">
+        <span class="text-yellow-100/90">Resuelvo problemas</span> a través de la
+        programación
+      </p>
 
-			<ul class="flex items-center gap-4 flex-wrap">
-				<li>
-					<SocialPill href="https://github.com/javlintor">
-						<GithubIcon class="size-8" />Github
-					</SocialPill>
-				</li>
-				<li>
-					<SocialPill href="https://www.linkedin.com/in/javlintor">
-						<LinkedInIcon class="size-8" />Linkedin
-					</SocialPill>
-				</li>
-				<li>
-					<SocialPill href="mailto:jlinarestorres2@gmail.com">
-						<MailIcon class="size-8" />jlinarestorres2@gmail.com
-					</SocialPill>
-				</li>
-			</ul>
-		</SectionContainer>
-		<SectionContainer id="experiencia" class="pt-20 lg:pt-40">
-			<h2
-				class="text-xl lg:text-4xl font-semibold mb-10 flex gap-x-2 items-center"
-			>
-				<FactoryIcon class="size-12" />
-				Experiencia Laboral
-			</h2>
-			<Experience />
-		</SectionContainer>
-		<SectionContainer id="proyectos">
-			<h2
-				class="text-xl lg:text-4xl font-semibold mb-10 flex gap-x-2 items-center"
-			>
-				<CodeIcon class="size-12" />
-				Proyectos
-			</h2>
-			<Projects />
-		</SectionContainer>
-	</main>
+      <ul class="flex flex-wrap items-center gap-4">
+        <li>
+          <SocialPill href="https://github.com/javlintor">
+            <GithubIcon class="size-8" />Github
+          </SocialPill>
+        </li>
+        <li>
+          <SocialPill href="https://www.linkedin.com/in/javlintor">
+            <LinkedInIcon class="size-8" />Linkedin
+          </SocialPill>
+        </li>
+        <li>
+          <SocialPill href="mailto:jlinarestorres2@gmail.com">
+            <MailIcon class="size-8" />jlinarestorres2@gmail.com
+          </SocialPill>
+        </li>
+      </ul>
+    </SectionContainer>
+  </main>
 </Layout>
