@@ -1,19 +1,17 @@
 <div align="center">
 <h2>
-    <em>Portfolio</em> de Javier Linares
+    Javier Linares' <em>Portfolio</em>
 </h2>
 <p>
-Realizado con Astro y Tailwind
+Made with Astro y Tailwind
 </p>
 
-
 <p>
-Basado en el diseño de <a href="https://github.com/midudev">midudev</a>
+Based on a <a href="https://github.com/midudev">midudev</a> design
 
 </p>
 
 </div>
-
 
 <div align="center">
 
@@ -27,13 +25,12 @@ Basado en el diseño de <a href="https://github.com/midudev">midudev</a>
 
 ## 🛠️ Stack
 
-- [**Astro**](https://astro.build/) - El framework web de la nueva época.
-- [**Typescript**](https://www.typescriptlang.org/) - JavaScript con sintaxis de tipado.
-- [**Tailwind**](https://tailwindcss.com/) - Framework de CSS de código abierto​ para el diseño de páginas web
+- [**Astro**](https://astro.build/)
+- [**Typescript**](https://www.typescriptlang.org/)
+- [**Tailwind**](https://tailwindcss.com/)
 
+## 🚀 Run it locally
 
-## 🚀 Ejecución
-Puedes lanzar la app con el comando
 ```bash
 npm run dev
 ```

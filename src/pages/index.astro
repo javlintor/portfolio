@@ -1,50 +1,74 @@
 ---
-import Badge from "../components/Badge.astro";
-import GithubIcon from "../components/icons/GithubIcon.astro";
-import LinkedInIcon from "../components/icons/LinkedInIcon.astro";
-import SocialPill from "../components/SocialPill.astro";
-import Layout from "../layouts/Layout.astro";
+import Badge from '../components/Badge.astro'
+import SectionContainer from '../components/SectionContainer.astro'
+import GithubIcon from '../components/icons/GithubIcon.astro'
+import LinkedInIcon from '../components/icons/LinkedInIcon.astro'
+import MailIcon from '../components/icons/MailIcon.astro'
+import SocialPill from '../components/SocialPill.astro'
+import Layout from '../layouts/Layout.astro'
 ---
 
-<Layout title="My portfolio">
-	<main>
-		<section class="w-full lg:w-[740px] mx-auto py-44">
-			<div
-				class="relative inline-flex items-center justify-center w-10 h-10 overflow-hidden bg-orange-800 rounded-full mb-4"
-			>
-				<span class="font-medium text-gray-200">JL</span>
-			</div>
-			<div class="flex gap-x-4 pb-10 items-center">
-				<h1 class="text-white text-4xl font-bold">
-					Hola! Soy Javier Linares
-				</h1>
-				<Badge href="https://www.linkedin.com/in/javlintor"
-					>Disponible para trabajar</Badge
-				>
-			</div>
+<Layout
+  title="Porfolio de Javier Linares - Desarrollador y Programador Freelance con experiencia en Ingeniería de datos"
+  description="Contrata a Javier Linares para trabajos Freelance relaciones con Ingeniería de Datos. Especializado en procesos ETL y modelado de datos. Experiencia con herramientas como Apache Spark, Apache Airflow, Databricks, dbt, AWS, Azure, FastAPI, Django otras teconologías."
+>
+  <main class="px-4">
+    <SectionContainer class="pt-20 lg:pt-40">
+      <div class="flex items-center gap-4 lg:gap-8">
+        <img
+          class="mb-4 size-20 rounded-full ring-2 ring-gray-300"
+          src="javlintor.jpeg"
+          alt="Default avatar"
+        />
+        <a
+          href="https://www.linkedin.com/in/javlintor"
+          target="_blank"
+          rel="noopener"
+          class="flex items-center transition md:justify-center md:hover:scale-105"
+        >
+          <Badge>Contáctame</Badge>
+        </a>
+      </div>
+      <div class="flex items-center gap-x-4 pb-4">
+        <h1 class="text-4xl font-extrabold text-white lg:text-5xl">
+          Hola 👋, soy <span
+            class="bg-gradient-to-r from-yellow-200 to-yellow-600 bg-clip-text text-transparent"
+            >Javier Linares</span
+          >
+        </h1>
+      </div>
 
-			<h2 class="text-xl mb-8">
-				<span>+ 3 años de experiencia. </span><span
-					class="text-yellow-100/90"
-					>Desarrollador de software.
-				</span><span class="text-red-100/90"
-					>De Sevilla, España 🇪🇸.
-				</span><span class="opacity-70"
-					>Especializado en Ingeniería de Datos.</span
-				>
-			</h2>
-			<ul class="flex items-center gap-x-4">
-				<li>
-					<SocialPill href="https://github.com/javlintor">
-						<GithubIcon class="size-8" />
-					</SocialPill>
-				</li>
-				<li>
-					<SocialPill href="https://www.linkedin.com/in/javlintor">
-						<LinkedInIcon class="size-8" />
-					</SocialPill>
-				</li>
-			</ul>
-		</section>
-	</main>
+      <h2 class="mb-4 text-2xl font-bold text-[#51E4B8]/70 lg:text-3xl">
+        Data Engineer
+      </h2>
+
+      <p class="mb-2 text-pretty text-xl">
+        <span>+ 5 años de experiencia. </span><span class="text-red-100/90"
+          >De Huelva, España 🇪🇸.
+        </span>
+      </p>
+      <p class="mb-8 text-pretty text-xl">
+        <span class="text-yellow-100/90">Resuelvo problemas</span> a través de la
+        programación
+      </p>
+
+      <ul class="flex flex-wrap items-center gap-4">
+        <li>
+          <SocialPill href="https://github.com/javlintor">
+            <GithubIcon class="size-8" />Github
+          </SocialPill>
+        </li>
+        <li>
+          <SocialPill href="https://www.linkedin.com/in/javlintor">
+            <LinkedInIcon class="size-8" />Linkedin
+          </SocialPill>
+        </li>
+        <li>
+          <SocialPill href="mailto:jlinarestorres2@gmail.com">
+            <MailIcon class="size-8" />jlinarestorres2@gmail.com
+          </SocialPill>
+        </li>
+      </ul>
+    </SectionContainer>
+  </main>
 </Layout>
