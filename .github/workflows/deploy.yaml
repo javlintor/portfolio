@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
@@ -27,11 +28,14 @@ jobs:
       - name: Deploy via SCP
         env:
           SSH_PRIVATE_KEY: ${{ secrets.HOSTINGER_SSH_KEY }}
+          HOSTINGER_IP: ${{ vars.HOSTINGER_IP }}
+          HOSTINGER_SSH_PORT: ${{ vars.HOSTINGER_SSH_PORT }}
+          HOSTINGER_USER: ${{ vars.HOSTINGER_USER }}
         run: |
           mkdir -p ~/.ssh
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
 
-          ssh-keyscan -p 65002 92.113.28.39 >> ~/.ssh/known_hosts
+          ssh-keyscan -p $HOSTINGER_SSH_PORT $HOSTINGER_IP >> ~/.ssh/known_hosts
 
-          scp -P 65002 -r ./dist/* u743640869@92.113.28.39:domains/javlintor.com/public_html
+          scp -P $HOSTINGER_SSH_PORT -r ./dist/* $HOSTINGER_USER@HOSTINGER_IP:domains/javlintor.com/public_html
