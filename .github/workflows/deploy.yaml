@@ -25,13 +25,12 @@ jobs:
       - name: Build Astro
         run: npm run build
 
-      - uses: actions/checkout@v4
       - name: Copy files via SSH
         uses: appleboy/scp-action@v1
         with:
           host: ${{ vars.HOSTINGER_IP }}
           username: ${{ vars.HOSTINGER_USER }}
-          password: ${{ secrets.HOSTINGER_SSH_KEY }}
+          password: ${{ secrets.HOSTINGER_SSH_PASSWORD }}
           port: ${{ vars.HOSTINGER_SSH_PORT }}
           source: "dist/*"
           target: domains/javlintor.com/public_html
