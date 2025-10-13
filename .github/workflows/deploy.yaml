@@ -38,4 +38,4 @@ jobs:
 
           ssh-keyscan -p $HOSTINGER_SSH_PORT $HOSTINGER_IP >> ~/.ssh/known_hosts
 
-          scp -P $HOSTINGER_SSH_PORT -r ./dist/* $HOSTINGER_USER@HOSTINGER_IP:domains/javlintor.com/public_html
+          scp -P $HOSTINGER_SSH_PORT -r ./dist/* $HOSTINGER_USER@$HOSTINGER_IP:domains/javlintor.com/public_html
