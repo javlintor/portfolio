@@ -32,5 +32,5 @@ jobs:
           username: ${{ vars.HOSTINGER_USER }}
           password: ${{ secrets.HOSTINGER_SSH_PASSWORD }}
           port: ${{ vars.HOSTINGER_SSH_PORT }}
-          source: "dist/*"
+          source: dist/*
           target: domains/javlintor.com/public_html
