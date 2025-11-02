@@ -3,12 +3,7 @@
     Javier Linares' <em>Portfolio</em>
 </h2>
 <p>
-Made with Astro y Tailwind
-</p>
-
-<p>
-Based on a <a href="https://github.com/midudev">midudev</a> design
-
+Made with Astro
 </p>
 
 </div>
@@ -26,8 +21,6 @@ Based on a <a href="https://github.com/midudev">midudev</a> design
 ## 🛠️ Stack
 
 - [**Astro**](https://astro.build/)
-- [**Typescript**](https://www.typescriptlang.org/)
-- [**Tailwind**](https://tailwindcss.com/)
 
 ## 🚀 Run it locally
 

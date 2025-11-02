@@ -1,8 +1,151 @@
-html {
-  font-family: sans-serif;
+@import './fonts.css';
+
+:root {
+  --bg-darker: hsl(0 5% 85%);
+  --bg-dark: hsl(0 5% 90%);
+  --bg: hsl(0 5% 95%);
+  --bg-light: hsl(0 5% 100%);
+  --bg-dots-spacing: 30px;
+  --text: hsl(0 0% 5%);
+  --text-muted: hsl(0 0% 30%);
+  --highlight: hsl(45, 90%, 60%);
+  --bg-gradient: linear-gradient(transparent, var(--bg-dark) 90%);
+  --gradient: linear-gradient(0deg, var(--bg) 95%, var(--bg-light));
+  --gradient-hover: linear-gradient(0deg, var(--bg), var(--bg-light));
+  --ff: 'JetBrains Mono', monospace;
+  --font-size-sm: 0.5rem;
+  --font-size-md: clamp(0.7rem, 3vw, 1.5rem);
+  --font-size-xl: clamp(1rem, 4vw, 2rem);
+  --font-size-2xl: clamp(3rem, 12vw, 6rem);
+  --border: solid 2px var(--text-muted);
+  --shadow:
+    0px 2px 2px hsla(0, 0%, 0%, 0.07), 0px 4px 4px hsla(0, 0%, 0%, 0.15);
+  --primary: hsl(127, 16%, 55%);
+  --secondary: hsl(125, 22%, 71%);
+  --accent: hsl(125, 30%, 62%);
+  --space-xs: clamp(1rem, 2vw, 1.5rem);
+  --space-sm: clamp(1.5rem, 3vw, 2rem);
+  --space-md: clamp(2rem, 4vw, 3rem);
+  --space-lg: clamp(3rem, 6vw, 4rem);
+  --space-xl: clamp(4rem, 8vw, 400px);
+  --space-2xl: clamp(6rem, 20vw, 700px);
+  --gradient-text: linear-gradient(to right, var(--primary), var(--highlight));
 }
-p,
-span,
-a {
-  color: white;
+
+body {
+  font-family: var(--ff);
+  color: var(--text-muted);
+  background-color: var(--bg-dark);
+  background-image: radial-gradient(var(--bg-darker) 2px, transparent 1px);
+  background-size: var(--bg-dots-spacing) var(--bg-dots-spacing);
+  background-attachment: fixed;
+}
+
+h1 {
+  font-size: var(--font-size-2xl);
+  color: var(--text);
+  margin-bottom: var(--space-lg);
+}
+h2 {
+  font-weight: 400;
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--space-lg);
+}
+
+button,
+.btn {
+  background: var(--secondary);
+  padding: 0.5rem 1rem 0.7rem 1rem;
+  color: var(--text);
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  border-radius: 0.5rem;
+  border: var(--border);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn {
+  animation: bounce 0.5s infinite alternate;
+}
+.btn:hover {
+  background-color: var(--primary);
+  scale: 1.05;
+  animation: none;
+}
+
+@keyframes bounce {
+  to {
+    transform: scale(1.05);
+  }
+}
+.card {
+  background: var(--gradient);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: var(--border);
+  box-shadow: var(--shadow);
+}
+.card:hover {
+  background: var(--gradient-hover);
+}
+.section {
+  width: 90%;
+  max-width: 1200px;
+  height: 100vh;
+  margin: 0 auto;
+  padding-top: var(--space-lg);
+  position: relative;
+}
+.gradient-text {
+  background: var(--gradient-text);
+  background-clip: text;
+  color: transparent;
+}
+.box {
+  width: 400px;
+}
+
+.container-x {
+  display: flex;
+  gap: 100px;
+  align-items: center;
+  justify-content: center;
+}
+.container-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.margin-top-xl {
+  margin-top: var(--space-xl);
+}
+
+.container-y {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.site-header {
+  font-size: var(--font-size-md);
+  padding-top: 1rem;
+  position: fixed; /* stays on top when scrolling */
+  top: 0;
+  right: 20%;
+  z-index: 1000;
+}
+.nav {
+  display: flex;
+  gap: var(--space-lg);
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav a:hover {
+  color: var(--accent); /* accent color on hover */
 }
