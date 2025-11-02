@@ -14,7 +14,7 @@
   --gradient-hover: linear-gradient(0deg, var(--bg), var(--bg-light));
   --ff: 'JetBrains Mono', monospace;
   --font-size-sm: 0.5rem;
-  --font-size-md: clamp(0.7rem, 3vw, 1.5rem);
+  --font-size-md: clamp(0.7rem, 3vw, 1.2rem);
   --font-size-xl: clamp(1rem, 4vw, 2rem);
   --font-size-2xl: clamp(3rem, 12vw, 6rem);
   --border: solid 2px var(--text-muted);
@@ -27,8 +27,8 @@
   --space-sm: clamp(1.5rem, 3vw, 2rem);
   --space-md: clamp(2rem, 4vw, 3rem);
   --space-lg: clamp(3rem, 6vw, 4rem);
-  --space-xl: clamp(4rem, 8vw, 400px);
-  --space-2xl: clamp(6rem, 20vw, 700px);
+  --space-xl: clamp(4rem, 8vw, 6rem);
+  --space-2xl: clamp(5rem, 10vw, 8rem);
   --gradient-text: linear-gradient(to right, var(--primary), var(--highlight));
 }
 
@@ -57,7 +57,7 @@ button,
   background: var(--secondary);
   padding: 0.5rem 1rem 0.7rem 1rem;
   color: var(--text);
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-lg);
   font-weight: 700;
   border-radius: 0.5rem;
   border: var(--border);
@@ -95,7 +95,6 @@ button,
   height: 100vh;
   margin: 0 auto;
   padding-top: var(--space-lg);
-  position: relative;
 }
 .gradient-text {
   background: var(--gradient-text);
@@ -117,8 +116,8 @@ button,
   align-items: center;
   justify-content: center;
 }
-.margin-top-xl {
-  margin-top: var(--space-xl);
+.margin-top-lg {
+  margin-top: var(--space-lg);
 }
 
 .container-y {
@@ -131,7 +130,7 @@ button,
   padding-top: 1rem;
   position: fixed; /* stays on top when scrolling */
   top: 0;
-  right: 20%;
+  right: 10%;
   z-index: 1000;
 }
 .nav {
