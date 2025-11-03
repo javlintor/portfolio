@@ -16,19 +16,19 @@
   --font-size-sm: 0.5rem;
   --font-size-md: clamp(0.7rem, 3vw, 1.2rem);
   --font-size-xl: clamp(1rem, 4vw, 2rem);
-  --font-size-2xl: clamp(3rem, 12vw, 6rem);
+  --font-size-2xl: clamp(4rem, 6vw, 8rem);
   --border: solid 2px var(--text-muted);
   --shadow:
     0px 2px 2px hsla(0, 0%, 0%, 0.07), 0px 4px 4px hsla(0, 0%, 0%, 0.15);
   --primary: hsl(127, 16%, 55%);
   --secondary: hsl(125, 22%, 71%);
   --accent: hsl(125, 30%, 62%);
-  --space-xs: clamp(1rem, 2vw, 1.5rem);
-  --space-sm: clamp(1.5rem, 3vw, 2rem);
-  --space-md: clamp(2rem, 4vw, 3rem);
-  --space-lg: clamp(3rem, 6vw, 4rem);
-  --space-xl: clamp(4rem, 8vw, 6rem);
-  --space-2xl: clamp(5rem, 10vw, 8rem);
+  --space-xs: clamp(0.25rem, 0.4vw, 0.5rem); /* ~4px → 8px */
+  --space-sm: clamp(0.5rem, 0.8vw, 1rem); /* ~8px → 16px */
+  --space-md: clamp(1rem, 1.6vw, 1.5rem); /* ~16px → 24px */
+  --space-lg: clamp(1.5rem, 2.4vw, 2rem); /* ~24px → 32px */
+  --space-xl: clamp(2rem, 3.2vw, 3rem); /* ~32px → 48px */
+  --space-2xl: clamp(2.5rem, 3.8vw, 4rem); /* ~32px → 48px */
   --gradient-text: linear-gradient(to right, var(--primary), var(--highlight));
 }
 
@@ -53,7 +53,7 @@ h2 {
 }
 
 button,
-.btn {
+.btn-action {
   background: var(--secondary);
   padding: 0.5rem 1rem 0.7rem 1rem;
   color: var(--text);
@@ -65,10 +65,11 @@ button,
   cursor: pointer;
   text-decoration: none;
 }
-.btn {
+.btn-action {
   animation: bounce 0.5s infinite alternate;
+  margin-top: 20vh;
 }
-.btn:hover {
+.btn-action:hover {
   background-color: var(--primary);
 }
 
@@ -92,7 +93,6 @@ button,
   max-width: 1200px;
   height: 100vh;
   margin: 0 auto;
-  padding-top: var(--space-lg);
 }
 .gradient-text {
   background: var(--gradient-text);
@@ -114,23 +114,37 @@ button,
   align-items: center;
   justify-content: center;
 }
-.margin-top-lg {
-  margin-top: var(--space-lg);
-}
 
 .container-y {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
-.site-header {
+header {
   font-size: var(--font-size-md);
-  padding-top: 1rem;
-  position: fixed; /* stays on top when scrolling */
-  top: 0;
-  right: 10%;
-  z-index: 1000;
+  padding: var(--space-md) 0px;
+  position: sticky;
+  top: 0px;
 }
+header:not(.scrolled) {
+  background-color: transparent;
+  backdrop-filter: none;
+}
+
+header.scrolled {
+  backdrop-filter: blur(5px);
+}
+header > :first-child {
+  position: relative;
+  left: 60%;
+}
+
+@media (width <= 1250px) {
+  header > :first-child {
+    left: 40%;
+  }
+}
+
 .nav {
   display: flex;
   gap: var(--space-lg);

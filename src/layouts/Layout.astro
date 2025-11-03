@@ -1,4 +1,6 @@
 ---
+import Header from '../components/Header.astro'
+
 interface Props {
   title: string
   description: string
@@ -18,13 +20,7 @@ const { title, description } = Astro.props
     <title>{title}</title>
   </head>
   <body>
-    <header class="site-header">
-      <nav class="nav">
-        <a href="#projects">Projects</a>
-        <a href="#blog">Blog</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
+    <Header />
     <slot />
   </body>
 </html>
