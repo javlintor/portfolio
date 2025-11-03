@@ -15,7 +15,8 @@
   --ff: 'JetBrains Mono', monospace;
   --font-size-sm: 0.5rem;
   --font-size-md: clamp(0.7rem, 3vw, 1.2rem);
-  --font-size-xl: clamp(1rem, 4vw, 2rem);
+  --font-size-lg: clamp(1rem, 2vw, 2.5rem);
+  --font-size-xl: clamp(2rem, 5vw, 6rem);
   --font-size-2xl: clamp(4rem, 6vw, 8rem);
   --border: solid 2px var(--text-muted);
   --shadow:
@@ -48,8 +49,7 @@ h1 {
 }
 h2 {
   font-weight: 400;
-  font-size: var(--font-size-xl);
-  margin-bottom: var(--space-lg);
+  font-size: var(--font-size-lg);
 }
 
 button,
@@ -57,7 +57,7 @@ button,
   background: var(--secondary);
   padding: 0.5rem 1rem 0.7rem 1rem;
   color: var(--text);
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-md);
   font-weight: 700;
   border-radius: 0.5rem;
   border: var(--border);
@@ -91,7 +91,7 @@ button,
 .section {
   width: 90%;
   max-width: 1200px;
-  height: 100vh;
+  height: 90vh;
   margin: 0 auto;
 }
 .gradient-text {
@@ -159,4 +159,10 @@ header > :first-child {
 
 .nav a:hover {
   color: var(--accent); /* accent color on hover */
+}
+
+.section-title {
+  font-size: var(--font-size-xl);
+  font-weight: 500;
+  color: var(--text);
 }
