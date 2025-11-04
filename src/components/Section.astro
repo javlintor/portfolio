@@ -1,9 +1,8 @@
 ---
-const { title } = Astro.props
-const id = title ? title.toLowerCase() : undefined
+const { title, ...rest } = Astro.props
 ---
 
-<section class="section" id={id}>
+<section class="section" id={rest.id}>
   {title && <h2 class="section-title">{title}</h2>}
   <slot />
 </section>

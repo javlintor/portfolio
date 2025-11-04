@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import HeroSection from '../components/HeroSection.astro'
 import Section from '../components/Section.astro'
 import '../styles/global.css'
 ---
@@ -8,19 +9,21 @@ import '../styles/global.css'
   title="Javier Linares | Data Engineer - Desarrollador especializado en Ingeniería de datos"
   description="Data Engineer con experiencia multidisciplinaria en banca, logística, supply chain y analítica web. Domino el ecosistema moderno de datos: dbt, Databricks, PySpark, Airflow, Terraform y Kubernetes sobre AWS. Me enfoco en la arquitectura, orquestación y automatización de flujos de datos escalables y eficientes."
 >
-  <Section>
-    <h1>
-      <span>Data</span>
-      <br />
-      <span class="gradient-text">Engineering</span>
-      <br /><span>Solutions</span>
-    </h1>
-    <h2>Javier Linares</h2>
+  <HeroSection>
+    <div>
+      <h1 class="hero-title">
+        <span>Data</span>
+        <br />
+        <span class="gradient-text">Engineering</span>
+        <br /><span>Solutions</span>
+      </h1>
+      <h2>Javier Linares</h2>
+    </div>
     <div class="container-center">
       <a href="#projects" class="btn-action">Conoce más 👇</a>
     </div>
-  </Section>
-  <Section title="Projects">
+  </HeroSection>
+  <Section title="Projects" id="projects">
     <div class="card box">
       <h3>This is project n 1</h3>
       <p>Some description about it</p>
