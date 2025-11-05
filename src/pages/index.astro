@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro'
 import HeroSection from '../components/HeroSection.astro'
 import Section from '../components/Section.astro'
+import ProjectCard from '../components/ProjectCard.astro'
 import '../styles/global.css'
 ---
 
@@ -24,10 +25,15 @@ import '../styles/global.css'
     </div>
   </HeroSection>
   <Section title="Projects" id="projects">
-    <div class="card box">
-      <h3>This is project n 1</h3>
-      <p>Some description about it</p>
-      <a href="#home">Find out more</a>
-    </div>
+    <ProjectCard
+      title="My Neovim config"
+      description="Check out my Neovim config focused on python, dbt and react development."
+      link="www.github/javlintor"
+    />
+    <ProjectCard
+      title="Manoli Bakes"
+      description="Management system based on Whatsapp API and MCP for bakery operations."
+      link="www.github/javlintor"
+    />
   </Section>
 </Layout>

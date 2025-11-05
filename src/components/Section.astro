@@ -1,8 +1,8 @@
 ---
-const { title, ...rest } = Astro.props
+const { title, className, ...rest } = Astro.props
 ---
 
-<section class="section" id={rest.id}>
+<section class={`section ${className}`} id={rest.id}>
   {title && <h2 class="section-title">{title}</h2>}
   <slot />
 </section>

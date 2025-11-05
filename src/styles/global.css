@@ -108,8 +108,10 @@ button,
   background-clip: text;
   color: transparent;
 }
-.box {
-  width: 400px;
+
+.project-card {
+  width: 30vw;
+  max-width: 300px;
 }
 
 .container-x {
