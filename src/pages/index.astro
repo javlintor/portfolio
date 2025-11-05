@@ -3,6 +3,9 @@ import Layout from '../layouts/Layout.astro'
 import HeroSection from '../components/HeroSection.astro'
 import Section from '../components/Section.astro'
 import ProjectCard from '../components/ProjectCard.astro'
+import GithubIcon from '../assets/github.svg'
+import LinkedInIcon from '../assets/linkedin.svg'
+import MaltIcon from '../assets/malt.svg'
 import '../styles/global.css'
 ---
 
@@ -19,6 +22,17 @@ import '../styles/global.css'
         <br /><span>Solutions</span>
       </h1>
       <h2>Javier Linares</h2>
+      <div class="subtitle-icons">
+        <a href="https://github.com/javlintor">
+          <GithubIcon />
+        </a>
+        <a href="https://linkedin.com/javlintor">
+          <LinkedInIcon />
+        </a>
+        <a href="https://malt.com/javlintor">
+          <MaltIcon />
+        </a>
+      </div>
     </div>
     <div class="container-center">
       <a href="#projects" class="btn-action">Conoce más 👇</a>
