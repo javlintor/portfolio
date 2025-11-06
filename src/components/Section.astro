@@ -6,3 +6,11 @@ const { title, className, ...rest } = Astro.props
   {title && <h2 class="section-title">{title}</h2>}
   <slot />
 </section>
+
+<style>
+  .section-title {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--text);
+  }
+</style>

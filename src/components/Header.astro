@@ -6,6 +6,43 @@
   </nav>
 </header>
 
+<style>
+  header {
+    font-size: var(--font-size-lg);
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: var(--space-md) 0;
+  }
+  header:not(.scrolled) {
+    background-color: transparent;
+    backdrop-filter: none;
+  }
+
+  header.scrolled {
+    backdrop-filter: blur(5px);
+  }
+
+  .nav {
+    display: flex;
+    gap: var(--space-lg);
+    margin-right: 25%;
+  }
+
+  .nav a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+    transition: color var(--transition-ease);
+  }
+
+  .nav a:hover {
+    color: var(--text-muted);
+  }
+</style>
+
 <script>
   window.addEventListener('scroll', () => {
     const header = document.querySelector('header')
