@@ -51,3 +51,19 @@ import '../styles/global.css'
     />
   </Section>
 </Layout>
+
+<style>
+  .subtitle-icons {
+    display: flex;
+    gap: var(--space-sm);
+  }
+  .subtitle-icons svg {
+    width: var(--font-size-lg);
+    height: var(--font-size-lg);
+    fill: var(--text);
+    transition: fill var(--transition-ease);
+  }
+  .subtitle-icons svg:hover {
+    fill: var(--primary);
+  }
+</style>
