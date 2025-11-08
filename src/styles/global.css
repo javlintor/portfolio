@@ -99,11 +99,6 @@ button,
   color: transparent;
 }
 
-.project-card {
-  width: 30vw;
-  max-width: 300px;
-}
-
 .container-x {
   display: flex;
   gap: 100px;

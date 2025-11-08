@@ -9,9 +9,21 @@ const { title, description, link } = Astro.props
 </div>
 
 <style>
+  h3 {
+    font-size: 2rem;
+  }
   .project-card {
     width: 70vw;
-    max-width: 800px;
     padding: var(--space-sm) var(--space-sm);
+  }
+  .card {
+    background: var(--gradient);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    border: var(--border);
+    box-shadow: var(--shadow);
+  }
+  .card:hover {
+    background: var(--gradient-hover);
   }
 </style>

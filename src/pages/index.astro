@@ -6,6 +6,7 @@ import ProjectCard from '../components/ProjectCard.astro'
 import GithubIcon from '../assets/github.svg'
 import LinkedInIcon from '../assets/linkedin.svg'
 import MaltIcon from '../assets/malt.svg'
+import ProjectGallery from '../components/ProjectGallery.astro'
 import '../styles/global.css'
 ---
 
@@ -43,16 +44,18 @@ import '../styles/global.css'
     </div>
   </HeroSection>
   <Section title="Projects" id="projects">
-    <ProjectCard
-      title="My Neovim config"
-      description="Check out my Neovim config focused on python, dbt and react development."
-      link="www.github/javlintor"
-    />
-    <ProjectCard
-      title="Manoli Bakes"
-      description="Management system based on Whatsapp API and MCP for bakery operations."
-      link="www.github/javlintor"
-    />
+    <ProjectGallery>
+      <ProjectCard
+        title="My Neovim config"
+        description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+        link="www.github/javlintor"
+      />
+      <ProjectCard
+        title="Manoli Bakes"
+        description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+        link="www.github/javlintor"
+      />
+    </ProjectGallery>
   </Section>
   <Section title="Contact" id="contact">
     Hola! Soy <strong>Javier Linares</strong>, Data Engineer.
