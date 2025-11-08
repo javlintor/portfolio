@@ -34,6 +34,9 @@
   --gradient-text: linear-gradient(to right, var(--primary), var(--highlight));
   --transition-ease: 0.3s ease;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: var(--ff);
@@ -69,9 +72,6 @@ button,
   box-shadow: var(--shadow);
   cursor: pointer;
   text-decoration: none;
-}
-.btn-action {
-  animation: bounce 0.5s infinite alternate;
 }
 .btn-action:hover {
   background-color: var(--primary);
