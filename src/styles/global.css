@@ -1,4 +1,5 @@
 @import './fonts.css';
+@import 'animate.css';
 
 :root {
   --bg-darker: hsl(0 5% 85%);
@@ -50,6 +51,7 @@ h1 {
 .hero-title {
   margin: 0;
 }
+
 h2 {
   font-weight: 400;
   font-size: var(--font-size-lg);
@@ -89,18 +91,6 @@ button,
 }
 .card:hover {
   background: var(--gradient-hover);
-}
-.hero-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  height: 100vh;
-}
-
-.section {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
 .gradient-text {
