@@ -82,16 +82,6 @@ button,
     transform: scale(1.05);
   }
 }
-.card {
-  background: var(--gradient);
-  padding: 1.5rem;
-  border-radius: 1rem;
-  border: var(--border);
-  box-shadow: var(--shadow);
-}
-.card:hover {
-  background: var(--gradient-hover);
-}
 
 .gradient-text {
   background: var(--gradient-text);

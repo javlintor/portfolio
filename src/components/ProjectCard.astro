@@ -1,9 +1,13 @@
 ---
 const { title, description, link } = Astro.props
+import Badge from './Badge.astro'
 ---
 
 <div class="card project-card">
   <h3>{title}</h3>
+  <div class="badges">
+    <Badge technology="nvim" />
+  </div>
   <p>{description}</p>
   <a href={link}>Find out more</a>
 </div>
@@ -11,10 +15,16 @@ const { title, description, link } = Astro.props
 <style>
   h3 {
     font-size: 2rem;
+    color: var(--text);
   }
   .project-card {
     width: 70vw;
     padding: var(--space-sm) var(--space-sm);
+    transition: scale var(--transition-ease);
+  }
+  .project-card:hover {
+    scale: 1.02;
+    cursor: pointer;
   }
   .card {
     background: var(--gradient);
@@ -25,5 +35,9 @@ const { title, description, link } = Astro.props
   }
   .card:hover {
     background: var(--gradient-hover);
+  }
+  .badges {
+    display: flex;
+    gap: var(--space-xs);
   }
 </style>
