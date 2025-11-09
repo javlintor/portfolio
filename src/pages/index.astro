@@ -6,6 +6,7 @@ import ProjectCard from '../components/ProjectCard.astro'
 import GithubIcon from '../images/github.svg'
 import LinkedInIcon from '../images/linkedin.svg'
 import MaltIcon from '../images/malt.svg'
+import DownIcon from '../images/down.svg'
 import ProjectGallery from '../components/ProjectGallery.astro'
 import '../styles/global.css'
 ---
@@ -35,11 +36,11 @@ import '../styles/global.css'
         </a>
       </div>
     </div>
-    <div class="container-center">
+    <div class="container-center scroll-button-container">
       <a
         href="#projects"
-        class="btn-action animate__animated animate__infinite animate__pulse"
-        >Conoce más 👇</a
+        class="animate__animated animate__infinite animate__pulse"
+        ><DownIcon id="scroll-button" /></a
       >
     </div>
   </HeroSection>
@@ -47,7 +48,7 @@ import '../styles/global.css'
     <ProjectGallery>
       <ProjectCard
         title="My Neovim config"
-        description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+        description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
         link="www.github/javlintor"
       />
       <ProjectCard
@@ -74,10 +75,17 @@ import '../styles/global.css'
   .subtitle-icons svg {
     width: var(--font-size-lg);
     height: var(--font-size-lg);
-    fill: var(--text);
-    transition: fill var(--transition-ease);
   }
-  .subtitle-icons svg:hover {
+  .scroll-button-container {
+    margin: var(--space-xl) 0;
+  }
+  #scroll-button {
+    fill: var(--secondary);
+    width: 50px;
+    height: 50px;
+  }
+  #scroll-button:hover {
     fill: var(--primary);
+    transition: fill var(--transition-ease);
   }
 </style>

@@ -1,6 +1,7 @@
 export const BadgeConfig = {
   nvim: {
     label: 'Neovim',
+    icon: 'nvim.svg',
     colors: {
       background: '#1abc9c20',
       text: '#1abc9c',

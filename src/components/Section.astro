@@ -1,9 +1,19 @@
 ---
 const { title, className, ...rest } = Astro.props
+import LinkIcon from '../images/link.svg'
 ---
 
 <section class={`section ${className}`} id={rest.id}>
-  {title && <h2 class="section-title">{title}</h2>}
+  {
+    title && (
+      <h2 class="section-title">
+        {title}{' '}
+        <span class="link-container">
+          <LinkIcon class="link-icon" />
+        </span>
+      </h2>
+    )
+  }
   <slot />
 </section>
 
@@ -13,7 +23,6 @@ const { title, className, ...rest } = Astro.props
     max-width: 1200px;
     margin: 0 auto;
     padding-top: 10vh;
-    height: 100vh;
   }
   .section-title {
     font-size: var(--font-size-xl);
@@ -22,5 +31,19 @@ const { title, className, ...rest } = Astro.props
   }
   h2 {
     margin: 0 0 var(-space-xl) 0;
+  }
+  h2:hover .link-icon {
+    display: inline;
+  }
+  .link-icon {
+    width: 50px;
+    height: 50px;
+    fill: var(--text-muted);
+    display: none;
+  }
+  .link-icon:hover {
+    cursor: pointer;
+    fill: var(--primary);
+    transition: fill var(--transition-ease);
   }
 </style>
