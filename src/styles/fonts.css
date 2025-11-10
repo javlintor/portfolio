@@ -24,6 +24,14 @@
   font-style: normal;
   font-display: swap;
 }
+/* JetBrains Mono Bold (800) */
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/JetBrainsMono/JetBrainsMono-ExtraBold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
 
 /* Optional italics */
 @font-face {

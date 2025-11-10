@@ -4,7 +4,7 @@ import Badge from './Badge.astro'
 import GithubIcon from '../images/github.svg'
 ---
 
-<div class="card project-card">
+<div class="project-card">
   <h3>
     {title}
   </h3>
@@ -20,6 +20,7 @@ import GithubIcon from '../images/github.svg'
 
 <style>
   h3 {
+    font-weight: 800;
     font-size: 2rem;
     color: var(--text);
     margin: var(--space-sm) 0;
@@ -29,19 +30,15 @@ import GithubIcon from '../images/github.svg'
     max-width: 1200px;
     padding: var(--space-sm) var(--space-sm);
     transition: all var(--transition-ease);
-  }
-  .project-card:hover {
-    transform: scale(1.02);
-  }
-  .card {
     background: var(--gradient);
     padding: 1.5rem;
     border-radius: 1rem;
     border: var(--border);
     box-shadow: var(--shadow);
   }
-  .card:hover {
+  .project-card:hover {
     background: var(--gradient-hover);
+    transform: scale(1.02);
   }
   .badges {
     margin-top: var(--space-sm);
@@ -49,8 +46,8 @@ import GithubIcon from '../images/github.svg'
     gap: var(--space-xs);
   }
   svg {
-    width: var(--font-size-lg);
-    height: var(--font-size-lg);
+    width: var(--font-size-md);
+    height: var(--font-size-md);
     fill: var(--text);
     transition: fill var(--transition-ease);
   }

@@ -1,16 +1,13 @@
 ---
 const { title, className, ...rest } = Astro.props
-import LinkIcon from '../images/link.svg'
+import LinkIcon from '../components/LinkIcon.astro'
 ---
 
 <section class={`section ${className}`} id={rest.id}>
   {
     title && (
       <h2 class="section-title">
-        {title}{' '}
-        <span class="link-container">
-          <LinkIcon class="link-icon" />
-        </span>
+        {title} <LinkIcon id={rest.id} />
       </h2>
     )
   }
@@ -31,19 +28,5 @@ import LinkIcon from '../images/link.svg'
   }
   h2 {
     margin: 0 0 var(-space-xl) 0;
-  }
-  h2:hover .link-icon {
-    display: inline;
-  }
-  .link-icon {
-    width: 50px;
-    height: 50px;
-    fill: var(--text-muted);
-    display: none;
-  }
-  .link-icon:hover {
-    cursor: pointer;
-    fill: var(--primary);
-    transition: fill var(--transition-ease);
   }
 </style>
