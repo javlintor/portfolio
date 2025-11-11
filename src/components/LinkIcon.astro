@@ -3,44 +3,19 @@ const { id } = Astro.props
 import LinkSVG from '../images/link.svg'
 ---
 
-<a class="link-container" href={`#${id}`}>
+<a href={`#${id}`}>
   <LinkSVG class="link-icon" />
 </a>
 
 <style>
   .link-icon {
-    width: var(--font-size-xl);
-    height: var(--font-size-xl);
+    width: var(--font-size-lg);
+    height: var(--font-size-lg);
     fill: var(--text-muted);
     cursor: pointer;
   }
   .link-icon:hover {
     fill: var(--primary);
     transition: fill var(--transition-ease);
-  }
-  .copy-tooltip {
-    position: absolute;
-    background: var(--primary);
-    color: white;
-    font-size: 0.8rem;
-    padding: 4px 8px;
-    border-radius: 6px;
-    margin-left: 8px;
-    animation: fadeInOut 1.5s ease;
-  }
-  @keyframes fadeInOut {
-    0% {
-      opacity: 0;
-      transform: translateY(-4px);
-    }
-    10%,
-    90% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    100% {
-      opacity: 0;
-      transform: translateY(-4px);
-    }
   }
 </style>
