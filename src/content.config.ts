@@ -1,4 +1,4 @@
-import { defineCollection, z } from "astro:content";
+import { defineCollection, reference, z } from "astro:content";
 
 import { file } from 'astro/loaders';
 
@@ -7,10 +7,9 @@ const projects = defineCollection({
 	schema: z.object({
 		title: z.string(),
 		description: z.string(),
-		link: z.string(),
-		technologies: z.array(z.string())
+		githubLink: z.string(),
 	})
 });
 
 
-export const coleections = { projects }
+export const collections = { projects }

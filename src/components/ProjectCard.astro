@@ -1,4 +1,10 @@
 ---
+interface Props {
+  title: string
+  description: string
+  githubLink?: string
+}
+
 const { title, description, githubLink } = Astro.props
 import GithubIcon from '../images/github.svg'
 ---

@@ -1,9 +1,12 @@
 {
-  "projects": [
-    {
-      "title": "Nvim config",
-      "description": "foo",
-      "technologies": ["nvim", "lua"]
-    }
-  ]
+  "nvim": {
+    "title": "Nvim config",
+    "description": "foo",
+    "githubLink": "#"
+  },
+  "manoliBakes": {
+    "title": "Manoli Bakes",
+    "description": "bar",
+    "githubLink": "#"
+  }
 }

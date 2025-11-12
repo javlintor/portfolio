@@ -1,0 +1,22 @@
+---
+import Section from '../components/Section.astro'
+import ProjectCard from '../components/ProjectCard.astro'
+import ProjectGallery from '../components/ProjectGallery.astro'
+import { getCollection } from 'astro:content'
+
+const projects = await getCollection('projects')
+---
+
+<Section title="Projects" id="projects">
+  <ProjectGallery>
+    {
+      projects.map((project) => (
+        <ProjectCard
+          title={project.data.title}
+          description={project.data.description}
+          githubLink={project.data.githubLink}
+        />
+      ))
+    }
+  </ProjectGallery>
+</Section>

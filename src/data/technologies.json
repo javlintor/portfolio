@@ -1,0 +1,19 @@
+{
+  "nvim": {
+    "label": "Neovim",
+    "icon": "nvim.svg",
+    "colors": {
+      "background": "#1abc9c20",
+      "text": "#1abc9c",
+      "border": "#1abc9c"
+    }
+  },
+  "lua": {
+    "label": "Lua",
+    "colors": {
+      "background": "#ff5d0120",
+      "text": "#ff5d01",
+      "border": "#ff5d01"
+    }
+  }
+}
