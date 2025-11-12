@@ -1,12 +1,45 @@
 ---
 const { class: className, ...rest } = Astro.props
+import GithubIcon from '../images/github.svg'
+import LinkedInIcon from '../images/linkedin.svg'
+import MaltIcon from '../images/malt.svg'
+import DownIcon from '../images/down.svg'
 ---
 
 <section class="hero-section" id={rest.id}>
-  <slot />
+  <div>
+    <h1 class="hero-title animate__animated animate__fadeIn">
+      <span>Data</span>
+      <br />
+      <span class="gradient-text">Engineering</span>
+      <br /><span>Solutions</span>
+    </h1>
+    <h2 class="animate__animated animate__fadeInLeft">Javier Linares</h2>
+    <div class="subtitle-icons animate__animated animate__fadeInUp">
+      <a href="https://github.com/javlintor">
+        <GithubIcon />
+      </a>
+      <a href="https://linkedin.com/javlintor">
+        <LinkedInIcon />
+      </a>
+      <a href="https://malt.com/javlintor">
+        <MaltIcon />
+      </a>
+    </div>
+  </div>
+  <div class="container-center scroll-button-container">
+    <a
+      href="#projects"
+      class="animate__animated animate__infinite animate__pulse"
+      ><DownIcon id="scroll-button" /></a
+    >
+  </div>
 </section>
 
 <style>
+  .hero-title {
+    margin: 0;
+  }
   .hero-section {
     display: flex;
     flex-direction: column;
@@ -15,5 +48,22 @@ const { class: className, ...rest } = Astro.props
     height: 100vh;
     max-width: 1000px;
     margin: 0 auto;
+  }
+  .subtitle-icons {
+    display: flex;
+    gap: var(--space-md);
+  }
+  .subtitle-icons svg {
+    width: var(--font-size-lg);
+    height: var(--font-size-lg);
+  }
+  #scroll-button {
+    fill: var(--secondary);
+    width: var(--font-size-lg);
+    height: var(--font-size-lg);
+  }
+  #scroll-button:hover {
+    fill: var(--primary);
+    transition: fill var(--transition-ease);
   }
 </style>

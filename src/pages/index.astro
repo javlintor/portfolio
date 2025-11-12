@@ -3,10 +3,6 @@ import Layout from '../layouts/Layout.astro'
 import HeroSection from '../components/HeroSection.astro'
 import Section from '../components/Section.astro'
 import ProjectCard from '../components/ProjectCard.astro'
-import GithubIcon from '../images/github.svg'
-import LinkedInIcon from '../images/linkedin.svg'
-import MaltIcon from '../images/malt.svg'
-import DownIcon from '../images/down.svg'
 import ProjectGallery from '../components/ProjectGallery.astro'
 import '../styles/global.css'
 ---
@@ -15,35 +11,7 @@ import '../styles/global.css'
   title="Javier Linares | Data Engineer - Desarrollador especializado en Ingeniería de datos"
   description="Data Engineer con experiencia multidisciplinaria en banca, logística, supply chain y analítica web. Domino el ecosistema moderno de datos: dbt, Databricks, PySpark, Airflow, Terraform y Kubernetes sobre AWS. Me enfoco en la arquitectura, orquestación y automatización de flujos de datos escalables y eficientes."
 >
-  <HeroSection>
-    <div>
-      <h1 class="hero-title animate__animated animate__fadeIn">
-        <span>Data</span>
-        <br />
-        <span class="gradient-text">Engineering</span>
-        <br /><span>Solutions</span>
-      </h1>
-      <h2 class="animate__animated animate__fadeInLeft">Javier Linares</h2>
-      <div class="subtitle-icons animate__animated animate__fadeInUp">
-        <a href="https://github.com/javlintor">
-          <GithubIcon />
-        </a>
-        <a href="https://linkedin.com/javlintor">
-          <LinkedInIcon />
-        </a>
-        <a href="https://malt.com/javlintor">
-          <MaltIcon />
-        </a>
-      </div>
-    </div>
-    <div class="container-center scroll-button-container">
-      <a
-        href="#projects"
-        class="animate__animated animate__infinite animate__pulse"
-        ><DownIcon id="scroll-button" /></a
-      >
-    </div>
-  </HeroSection>
+  <HeroSection />
   <Section title="Projects" id="projects">
     <ProjectGallery>
       <ProjectCard
@@ -66,23 +34,3 @@ import '../styles/global.css'
     Build with <a href="https://astro.build/">Astro</a>
   </footer>
 </Layout>
-
-<style>
-  .subtitle-icons {
-    display: flex;
-    gap: var(--space-md);
-  }
-  .subtitle-icons svg {
-    width: var(--font-size-lg);
-    height: var(--font-size-lg);
-  }
-  #scroll-button {
-    fill: var(--secondary);
-    width: var(--font-size-lg);
-    height: var(--font-size-lg);
-  }
-  #scroll-button:hover {
-    fill: var(--primary);
-    transition: fill var(--transition-ease);
-  }
-</style>

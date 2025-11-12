@@ -1,6 +1,5 @@
 ---
 const { title, description, githubLink } = Astro.props
-import Badge from './Badge.astro'
 import GithubIcon from '../images/github.svg'
 ---
 
@@ -8,9 +7,6 @@ import GithubIcon from '../images/github.svg'
   <h3>
     {title}
   </h3>
-  <div class="badges">
-    <Badge technology="nvim" />
-  </div>
   <p>{description}</p>
   <div class="project-links"></div>
   <a href={githubLink}>
@@ -39,11 +35,6 @@ import GithubIcon from '../images/github.svg'
   .project-card:hover {
     background: var(--gradient-hover);
     transform: scale(1.02);
-  }
-  .badges {
-    margin-top: var(--space-sm);
-    display: flex;
-    gap: var(--space-xs);
   }
   a {
     display: flex;

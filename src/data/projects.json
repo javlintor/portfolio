@@ -1,0 +1,9 @@
+{
+  "projects": [
+    {
+      "title": "Nvim config",
+      "description": "foo",
+      "technologies": ["nvim", "lua"]
+    }
+  ]
+}
