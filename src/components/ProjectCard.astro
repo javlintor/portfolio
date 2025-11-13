@@ -1,21 +1,20 @@
 ---
+import type { CollectionEntry } from 'astro:content'
 interface Props {
-  title: string
-  description: string
-  githubLink?: string
+  project: CollectionEntry<'projects'>
 }
 
-const { title, description, githubLink } = Astro.props
+const { project } = Astro.props
 import GithubIcon from '../images/github.svg'
 ---
 
 <div class="project-card">
   <h3>
-    {title}
+    {project.data.title}
   </h3>
-  <p>{description}</p>
+  <p>{project.data.description}</p>
   <div class="project-links"></div>
-  <a href={githubLink}>
+  <a href={project.data.githubLink}>
     <GithubIcon />
   </a>
 </div>

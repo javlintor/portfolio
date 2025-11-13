@@ -1,12 +1,12 @@
 {
-  "nvim": {
+  "dotfiles": {
     "title": "Nvim config",
     "description": "foo",
-    "githubLink": "#"
+    "githubLink": "https://github.com/javlintor/nvim"
   },
   "manoliBakes": {
-    "title": "Manoli Bakes",
+    "title": "Dotfiles",
     "description": "bar",
-    "githubLink": "#"
+    "githubLink": "https://github.com/javlintor/dotfiles"
   }
 }
