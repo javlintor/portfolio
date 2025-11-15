@@ -1,19 +1,16 @@
 {
   "nvim": {
     "label": "Neovim",
-    "icon": "nvim.svg",
-    "colors": {
-      "background": "#1abc9c20",
-      "text": "#1abc9c",
-      "border": "#1abc9c"
-    }
+    "image": "src/images/nvim.svg",
+    "link": "https://github.com/neovim/neovim",
+    "foregroundColor": "hsl(130, 40%, 40%)",
+    "backgroundColor": "hsl(130, 60%, 90%)"
   },
   "lua": {
     "label": "Lua",
-    "colors": {
-      "background": "#ff5d0120",
-      "text": "#ff5d01",
-      "border": "#ff5d01"
-    }
+    "image": "src/images/lua.svg",
+    "link": "https://github.com/lua/lua",
+    "foregroundColor": "hsl(230, 40%, 40%)",
+    "backgroundColor": "hsl(230, 60%, 90%)"
   }
 }

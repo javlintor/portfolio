@@ -1,12 +1,19 @@
 {
-  "dotfiles": {
-    "title": "Nvim config",
-    "description": "foo",
-    "githubLink": "https://github.com/javlintor/nvim"
+  "nvim": {
+    "title": "Neovim config",
+    "description": "We spend roughly 1,800 hours a year writing software, so it makes sense to invest in an environment that actually feels good to work in. This Neovim config is the result of that mindset: something built intentionally for the way I think and code, instead of forcing myself into someone else’s workflow.",
+    "githubLink": "https://github.com/javlintor/nvim",
+    "image": "src/images/nvim-start.png",
+    "imageDescription": "An image of my initial nvim setup after start.",
+    "technologies": ["nvim", "lua"]
   },
-  "manoliBakes": {
+  "dotfiles": {
     "title": "Dotfiles",
-    "description": "bar",
-    "githubLink": "https://github.com/javlintor/dotfiles"
+    "description": "Here are some configuration files and scripts I use in my day to day workflow: zsh, tmux, ghostty, ruff...",
+    "githubLink": "https://github.com/javlintor/dotfiles",
+    "image": "src/images/dotfiles.webp",
+    "imageWidth": "300px",
+    "imageDescription": "An image representing a regex pattern for dotfiles.",
+    "technologies": ["nvim"]
   }
 }

@@ -1,56 +1,86 @@
 ---
 import type { CollectionEntry } from 'astro:content'
+import Badge from './Badge.astro'
+import GithubIcon from '../images/github.svg'
+import { getEntries } from 'astro:content'
+
 interface Props {
   project: CollectionEntry<'projects'>
 }
 
 const { project } = Astro.props
-import GithubIcon from '../images/github.svg'
+const technologies = await getEntries(project.data.technologies)
 ---
 
 <div class="project-card">
-  <h3>
-    {project.data.title}
-  </h3>
-  <p>{project.data.description}</p>
-  <div class="project-links"></div>
-  <a href={project.data.githubLink}>
-    <GithubIcon />
-  </a>
-</div>
+  <div class="project-title">
+    <h3>
+      {project.data.title}
+    </h3>
+    {technologies.map((technology) => <Badge technology={technology} />)}
+  </div>
+  <div class="project-body">
+    <p>{project.data.description}</p>
+    <img
+      src={project.data.image}
+      alt={project.data.imageDescription}
+      width={project.data.imageWidth}
+      height={project.data.imageHeight}
+    />
+  </div>
+  <div class="project-links">
+    <a href={project.data.githubLink}>
+      <GithubIcon />
+    </a>
+  </div>
 
-<style>
-  h3 {
-    font-weight: 800;
-    font-size: 2rem;
-    color: var(--text);
-    margin: var(--space-sm) 0;
-  }
-  .project-card {
-    width: 70vw;
-    max-width: 1200px;
-    padding: var(--space-sm) var(--space-sm);
-    transition: all var(--transition-ease);
-    background: var(--gradient);
-    padding: 1.5rem;
-    border-radius: 1rem;
-    border: var(--border);
-    box-shadow: var(--shadow);
-  }
-  .project-card:hover {
-    background: var(--gradient-hover);
-    transform: scale(1.02);
-  }
-  a {
-    display: flex;
-  }
-  svg {
-    width: var(--font-size-lg);
-    height: var(--font-size-lg);
-    fill: var(--text);
-    transition: fill var(--transition-ease);
-  }
-  .project-links {
-    display: flex;
-  }
-</style>
+  <style>
+    h3 {
+      font-size: var(--font-size-lg);
+      color: var(--text);
+      margin: var(--space-sm) 0 var(--space-xs) 0;
+    }
+    .project-card {
+      padding: var(--space-sm) var(--space-sm);
+      transition: all var(--transition-ease);
+      background: var(--gradient);
+      padding: 1.5rem;
+      border-radius: 1rem;
+      border: var(--border);
+      box-shadow: var(--shadow);
+    }
+    .project-card:hover {
+      background: var(--gradient-hover);
+      transform: scale(1.02);
+    }
+    a {
+      display: flex;
+    }
+    svg {
+      width: var(--space-md);
+      height: var(--space-md);
+      fill: var(--text);
+      transition: fill var(--transition-ease);
+    }
+    .project-links {
+      margin-top: var(--space-sm);
+      display: flex;
+    }
+    .project-body {
+      display: flex;
+      justify-content: space-between;
+      gap: var(--space-sm);
+    }
+    @media (max-width: 600px) {
+      .project-body {
+        align-items: center;
+        flex-direction: column;
+      }
+    }
+    img {
+      max-width: 400px;
+      border-radius: var(--space-sm);
+      object-fit: contain;
+    }
+  </style>
+</div>

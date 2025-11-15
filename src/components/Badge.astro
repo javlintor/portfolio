@@ -1,48 +1,26 @@
 ---
-import { BadgeConfig } from '../data/techConfig'
-
-const { technology, variant = 'solid', size = 'md', customColor } = Astro.props
-
-const tech = BadgeConfig[technology] || {
-  label: technology,
-  icon: '/assets/tech/default.svg',
-  colors: {
-    background: '#f4f4f4',
-    text: '#111',
-    border: '#ccc',
-  },
+import type { CollectionEntry } from 'astro:content'
+interface Props {
+  technology: CollectionEntry<'technologies'>
 }
 
-// Resolve colors (allow overrides)
-const bg = customColor?.background || tech.colors.background
-const text = customColor?.text || tech.colors.text
-const border = customColor?.border || tech.colors.border
-
-const variantStyles = {
-  solid: `background:${bg}; color:${text}; border:none;`,
-  outline: `background:transparent; color:${text}; border:1px solid ${border};`,
-  minimal: `background:transparent; color:${text}; border:none; opacity:0.85;`,
-}
-
-const sizeStyles = {
-  sm: 'padding:0.15rem 0.5rem; font-size:0.75rem;',
-  md: 'padding:0.25rem 0.75rem; font-size:0.875rem;',
-  lg: 'padding:0.4rem 1rem; font-size:1rem;',
-}
+const { technology } = Astro.props
+const foregroundColor = technology.data.foregroundColor
+const backgroundColor = technology.data.backgroundColor
 ---
 
-<div
-  class="badge"
-  style={`${variantStyles[variant]} ${sizeStyles[size]}`}
-  aria-label={`Technology: ${tech.label}`}
->
-  <img src={tech.icon} alt="" aria-hidden="true" />
-  <span>{tech.label}</span>
-</div>
+<a class="badge" href={technology.data.link}>
+  <img src={technology.data.image} alt={`${technology.data.label} logo`} />
+  <span>{technology.data.label}</span>
+</a>
 
-<style>
+<style define:vars={{ foregroundColor, backgroundColor }}>
   .badge {
     display: inline-flex;
+    background-color: var(--backgroundColor);
+    padding: 4px 8px;
+    border: 2px solid var(--foregroundColor);
+    font-size: var(--font-size-sm);
     align-items: center;
     gap: 0.4rem;
     border-radius: 9999px;
@@ -61,10 +39,6 @@ const sizeStyles = {
 
   .badge:hover {
     transform: translateY(-1px);
-  }
-
-  .badge:active {
-    transform: translateY(0);
-    opacity: 0.9;
+    opacity: 0.8;
   }
 </style>
