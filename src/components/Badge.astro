@@ -11,7 +11,8 @@ const backgroundColor = technology.data.backgroundColor
 ---
 
 <a class="badge" href={technology.data.link}>
-  <Image src={technology.data.image} alt={`${technology.data.label} logo`} />
+  {console.log(technology.data.icon)}
+  <Image src={technology.data.icon} alt={`${technology.data.label} logo`} />
   <span>{technology.data.label}</span>
 </a>
 

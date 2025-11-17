@@ -1,21 +1,21 @@
 import { defineCollection, reference, z } from "astro:content";
 
-import { file, glob } from 'astro/loaders';
+import { glob } from 'astro/loaders';
 
 const blog = defineCollection({
 	loader: glob({ pattern: "**/*.md", base: "./src/data/blog" })
-})
+});
 
 const technologies = defineCollection({
-	loader: file("src/data/technologies.json"),
-	schema: z.object({
+	loader: glob({ pattern: "src/data/technology/*.md" }),
+	schema: ({ image }) => z.object({
 		label: z.string(),
-		image: z.string(),
+		icon: image(),
 		link: z.string(),
 		foregroundColor: z.string(),
 		backgroundColor: z.string(),
-	})
-})
+	}),
+});
 
 const projects = defineCollection({
 	loader: glob({ pattern: "src/data/project/*.md" }),

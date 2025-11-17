@@ -1,14 +1,14 @@
 {
   "nvim": {
     "label": "Neovim",
-    "image": "src/images/nvim.svg",
+    "icon": "./nvim.svg",
     "link": "https://github.com/neovim/neovim",
     "foregroundColor": "hsl(130, 40%, 40%)",
     "backgroundColor": "hsl(130, 60%, 90%)"
   },
   "lua": {
     "label": "Lua",
-    "image": "src/images/lua.svg",
+    "icon": "./lua.svg",
     "link": "https://github.com/lua/lua",
     "foregroundColor": "hsl(230, 40%, 40%)",
     "backgroundColor": "hsl(230, 60%, 90%)"

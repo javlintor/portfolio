@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Section from '../components/Section.astro'
+import { getEntry } from 'astro:content'
+import { Image } from 'astro:assets'
+
+const nvim = await getEntry('technologies', 'src/data/technology/nvim')
+---
+
+<Layout
+  title="Javier Linares | Data Engineer - Desarrollador especializado en Ingeniería de datos"
+  description="Data Engineer"
+>
+  <Section title={nvim.data.label} id="blog" />
+  <Image src={nvim.data.icon} alt="foo" />
+  <footer>
+    Build with <a href="https://astro.build/">Astro</a>
+  </footer>
+</Layout>
