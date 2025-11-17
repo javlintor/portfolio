@@ -1,6 +1,10 @@
 import { defineCollection, reference, z } from "astro:content";
 
-import { file } from 'astro/loaders';
+import { file, glob } from 'astro/loaders';
+
+const blog = defineCollection({
+	loader: glob({ pattern: "**/*.md", base: "./src/data/blog" })
+})
 
 const technologies = defineCollection({
 	loader: file("src/data/technologies.json"),
@@ -14,14 +18,9 @@ const technologies = defineCollection({
 })
 
 const projects = defineCollection({
-	loader: file("src/data/projects.json"),
+	loader: glob({ pattern: "src/data/project/*.md" }),
 	schema: z.object({
 		title: z.string(),
-		image: z.string(),
-		imageDescription: z.string(),
-		imageWidth: z.string().optional(),
-		imageHeight: z.string().optional(),
-		description: z.string(),
 		githubLink: z.string(),
 		technologies: z.array(reference('technologies'))
 	})
@@ -29,4 +28,4 @@ const projects = defineCollection({
 
 
 
-export const collections = { projects, technologies }
+export const collections = { projects, technologies, blog }

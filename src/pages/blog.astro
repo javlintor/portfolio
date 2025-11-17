@@ -1,19 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import HeroSection from '../sections/HeroSection.astro'
-import ProjectSection from '../sections/ProjectSection.astro'
 import Section from '../components/Section.astro'
+import { getEntry } from 'astro:content'
+import { render } from 'astro:content'
+
+const blog1 = await getEntry('blog', 'blog1')
+const { Content } = await render(blog1)
 ---
 
 <Layout
   title="Javier Linares | Data Engineer - Desarrollador especializado en Ingeniería de datos"
   description="Data Engineer"
 >
-  <HeroSection />
-  <ProjectSection />
-  <Section title="Tech Stack" id="tech-stack" />
-  <Section title="Contact" id="contact">
-    Hola! Soy <strong>Javier Linares</strong>, Data Engineer.
+  <Section title={blog1.data.title} id="blog">
+    <Content />
   </Section>
   <footer>
     Build with <a href="https://astro.build/">Astro</a>

@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets'
 import type { CollectionEntry } from 'astro:content'
 interface Props {
   technology: CollectionEntry<'technologies'>
@@ -10,7 +11,7 @@ const backgroundColor = technology.data.backgroundColor
 ---
 
 <a class="badge" href={technology.data.link}>
-  <img src={technology.data.image} alt={`${technology.data.label} logo`} />
+  <Image src={technology.data.image} alt={`${technology.data.label} logo`} />
   <span>{technology.data.label}</span>
 </a>
 
