@@ -7,7 +7,7 @@ const blog = defineCollection({
 });
 
 const technologies = defineCollection({
-	loader: glob({ pattern: "src/data/technology/*.md" }),
+	loader: glob({ base: "./src/data/technology", pattern: "**/*.md" }),
 	schema: ({ image }) => z.object({
 		label: z.string(),
 		icon: image(),
@@ -18,7 +18,7 @@ const technologies = defineCollection({
 });
 
 const projects = defineCollection({
-	loader: glob({ pattern: "src/data/project/*.md" }),
+	loader: glob({ base: "./src/data/project", pattern: "**/*.md" }),
 	schema: z.object({
 		title: z.string(),
 		githubLink: z.string(),
