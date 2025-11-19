@@ -1,5 +1,5 @@
 ---
-title: "Foo"
+title: "Dotfiles"
 githubLink: https://github.com/javlintor/dotfiles
 technologies:
 - lua

@@ -16,13 +16,13 @@ import DownIcon from '../images/down.svg'
     </h1>
     <h2 class="animate__animated animate__fadeInLeft">Javier Linares</h2>
     <div class="subtitle-icons animate__animated animate__fadeInUp">
-      <a href="https://github.com/javlintor">
+      <a href="https://github.com/javlintor" class="interactive">
         <GithubIcon />
       </a>
-      <a href="https://linkedin.com/javlintor">
+      <a href="https://linkedin.com/javlintor" class="interactive">
         <LinkedInIcon />
       </a>
-      <a href="https://malt.com/javlintor">
+      <a href="https://malt.com/javlintor" class="interactive">
         <MaltIcon />
       </a>
     </div>
@@ -38,7 +38,7 @@ import DownIcon from '../images/down.svg'
 
 <style>
   .hero-title {
-    margin: 0;
+    margin: 0 0 var(--space-lg) 0;
   }
   .hero-section {
     display: flex;
@@ -54,8 +54,8 @@ import DownIcon from '../images/down.svg'
     gap: var(--space-md);
   }
   .subtitle-icons svg {
-    width: var(--space-md);
-    height: var(--space-md);
+    width: var(--space-lg);
+    height: auto;
   }
   #scroll-button {
     fill: var(--secondary);
