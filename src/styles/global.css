@@ -16,7 +16,7 @@
   --ff: 'JetBrains Mono', monospace;
   --font-size-2xl: clamp(3rem, 9vw + 1rem, 7rem);
   --font-size-xl: clamp(2rem, 4vw, 5rem);
-  --font-size-lg: clamp(1rem, 2vw, 3rem);
+  --font-size-lg: clamp(1.5rem, 2vw, 3rem);
   --font-size-md: clamp(1rem, 1vw, 1.5rem);
   --font-size-sm: 0.7rem;
   --space-2xl: clamp(4rem, 14vw + 1rem, 16rem);
