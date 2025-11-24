@@ -1,12 +1,7 @@
 ---
-import type { CollectionEntry } from 'astro:content'
 import Badge from './Badge.astro'
 import GithubIcon from '../images/github.svg'
 import { getEntries } from 'astro:content'
-
-interface Props {
-  project: CollectionEntry<'projects'>
-}
 
 import LinkSecondaryIcon from '../images/link2.svg'
 const { project } = Astro.props
