@@ -1,6 +1,7 @@
 ---
 title: "Foo"
 githubLink: https://github.com/javlintor/dotfiles
+description: "Short description"
 technologies:
 - lua
 ---

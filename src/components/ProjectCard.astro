@@ -2,7 +2,7 @@
 import type { CollectionEntry } from 'astro:content'
 import Badge from './Badge.astro'
 import GithubIcon from '../images/github.svg'
-import { getEntries, render } from 'astro:content'
+import { getEntries } from 'astro:content'
 
 interface Props {
   project: CollectionEntry<'projects'>
@@ -11,19 +11,18 @@ interface Props {
 import LinkSecondaryIcon from '../images/link2.svg'
 const { project } = Astro.props
 const technologies = await getEntries(project.data.technologies)
-const { Content } = await render(project)
 ---
 
 <div class="project-card">
-  <div class="project-title-and-content">
-    <div>
-      <h3>
-        {project.data.title}
-        <LinkSecondaryIcon class="link-secondary interactive" />
-      </h3>
-      {technologies.map((technology) => <Badge technology={technology} />)}
-    </div>
-    <Content />
+  <div>
+    <h3>
+      {project.data.title}
+      <a href=`project/${project.id}` class="link-secondary">
+        <LinkSecondaryIcon class="interactive" />
+      </a>
+    </h3>
+    {technologies.map((technology) => <Badge technology={technology} />)}
+    <p>{project.data.description}</p>
   </div>
   <div class="project-links">
     <a href={project.data.githubLink}>
@@ -36,6 +35,8 @@ const { Content } = await render(project)
       font-size: var(--font-size-lg);
       color: var(--text);
       margin: var(--space-sm) 0 var(--space-xs) 0;
+      display: flex;
+      gap: var(--space-sm);
     }
     .project-card {
       display: flex;
@@ -69,13 +70,15 @@ const { Content } = await render(project)
     }
     .link-secondary {
       display: none;
+    }
+    .link-secondary svg {
       fill: var(--bg);
       stroke: var(--text);
     }
     .project-card:hover .link-secondary {
       display: inline;
     }
-    .link-secondary:hover {
+    .link-secondary:hover svg {
       stroke: var(--primary);
       cursor: pointer;
     }
