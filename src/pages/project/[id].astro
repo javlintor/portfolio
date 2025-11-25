@@ -18,12 +18,13 @@ const { Content } = await render(project)
   title=`Javier Linares Project`
   description=`Details on the Project develop by Data Engineer`
 >
-  <Content />
-</Layout>
+  <main>
+    <Content />
+  </main>
 
-<style>
-  .blog-entry {
-    display: flex;
-    margin: var(--space-xl) var(--space-xl);
-  }
-</style>
+  <style>
+    main {
+      margin: var(--space-xl);
+    }
+  </style>
+</Layout>
