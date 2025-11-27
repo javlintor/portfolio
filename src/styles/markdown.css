@@ -1,0 +1,145 @@
+/* Markdown content wrapper */
+.markdown {
+  font-family: var(--ff);
+  color: var(--text);
+  line-height: 1.7;
+  font-size: var(--font-size-md);
+  max-width: 70ch;
+  margin-inline: auto;
+  padding: var(--space-lg) var(--space-md);
+}
+
+/* Headings */
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6 {
+  font-weight: 600;
+  line-height: 1.3;
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-md);
+  color: var(--text);
+}
+
+.markdown h1 {
+  font-size: var(--font-size-2xl);
+}
+
+.markdown h2 {
+  font-size: var(--font-size-xl);
+}
+
+.markdown h3 {
+  font-size: var(--font-size-lg);
+}
+
+.markdown h4,
+.markdown h5,
+.markdown h6 {
+  font-size: var(--font-size-md);
+}
+
+/* Paragraphs */
+.markdown p {
+  margin-bottom: var(--space-md);
+}
+
+/* Links */
+.markdown a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color var(--transition-ease);
+}
+
+.markdown a:hover {
+  color: var(--accent);
+}
+
+/* Lists */
+.markdown ul,
+.markdown ol {
+  margin: var(--space-md) 0;
+  padding-left: var(--space-lg);
+  line-height: 1.7;
+}
+
+.markdown li {
+  margin-bottom: var(--space-xs);
+}
+
+/* Blockquote */
+.markdown blockquote {
+  border-left: 4px solid var(--accent);
+  padding-left: var(--space-md);
+  color: var(--text-muted);
+  margin: var(--space-lg) 0;
+  background: var(--bg);
+  padding: var(--space-sm) var(--space-md);
+}
+
+/* Code inline */
+.markdown code {
+  background: var(--bg-dark);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+/* Code blocks */
+.markdown pre {
+  background: var(--bg-dark);
+  padding: var(--space-md);
+  border-radius: 8px;
+  overflow-x: auto;
+  box-shadow: var(--shadow);
+  margin: var(--space-lg) 0;
+}
+
+.markdown pre code {
+  background: none;
+  padding: 0;
+}
+
+/* Images */
+.markdown img {
+  max-width: 100%;
+  height: auto;
+  margin: var(--space-md) auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+/* Horizontal rule */
+.markdown hr {
+  border: none;
+  border-top: var(--border);
+  margin: var(--space-lg) 0;
+}
+
+/* Tables */
+.markdown table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--space-lg) 0;
+  font-size: var(--font-size-md);
+}
+
+.markdown th,
+.markdown td {
+  border: var(--border);
+  padding: var(--space-xs) var(--space-sm);
+}
+
+.markdown th {
+  background: var(--bg);
+  font-weight: 600;
+}
+
+/* Highlight text (mark) */
+.markdown mark {
+  background: var(--highlight);
+  padding: 0 0.2em;
+}

@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content'
 import Layout from '../../layouts/Layout.astro'
+import Prose from '../../components/Prose.astro'
 
 export async function getStaticPaths() {
   const projects = await getCollection('projects')
@@ -12,19 +13,14 @@ export async function getStaticPaths() {
 
 const { project } = Astro.props
 const { Content } = await render(project)
+import '../../styles/markdown.css'
 ---
 
 <Layout
   title=`Javier Linares Project`
   description=`Details on the Project develop by Data Engineer`
 >
-  <main>
+  <Prose>
     <Content />
-  </main>
-
-  <style>
-    main {
-      margin: var(--space-xl);
-    }
-  </style>
+  </Prose>
 </Layout>

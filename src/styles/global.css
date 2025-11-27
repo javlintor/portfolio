@@ -1,5 +1,6 @@
 @import './fonts.css';
 @import 'animate.css';
+@import './markdown.css';
 
 :root {
   --bg-darker: hsl(0 5% 85%);
@@ -31,6 +32,7 @@
   --primary: hsl(127, 16%, 55%);
   --secondary: hsl(125, 22%, 71%);
   --accent: hsl(125, 30%, 62%);
+  --red: hsl(0, 30%, 60%);
   --gradient-text: linear-gradient(to right, var(--primary), var(--highlight));
   --transition-ease: 0.3s ease;
 }
@@ -114,10 +116,19 @@ a {
     transform 0.2s ease,
     opacity 0.2s ease,
     fill 0.2s ease,
-    stroke 0.2s ease;
+    stroke 0.2s ease,
+    color 0.2s ease;
 }
 .interactive:hover {
   fill: var(--primary);
+  color: var(--primary);
   transform: translateY(-1px);
   opacity: 0.8;
+}
+
+.primary {
+  color: var(--primary);
+}
+.red {
+  color: var(--red);
 }

@@ -27,3 +27,4 @@ I will finish the Astro tutorial, and then keep adding more posts. Watch this sp
 def func(a: str, b: int) -> None
     return a
 ```
+[this is a link](foo)
