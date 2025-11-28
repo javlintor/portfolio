@@ -1,12 +1,5 @@
 # Styleguide
 
-A quick-and-dirty frontend styleguide, designed to be copied and pasted into your CMS.
-
-It contains all common page elements, in HTML and [(Github Flavored) Markdown](https://help.github.com/articles/github-flavored-markdown) formats.
-
-If you'd like to contribute, make your changes to both the [markdown](https://github.com/bryanbraun/poor-mans-styleguide/blob/gh-pages/README.md) and [HTML](https://github.com/bryanbraun/poor-mans-styleguide/blob/gh-pages/index.html) files. If the elements can not be represented in markdown (like forms, for example), you can just add them to the final section of [index.html](https://github.com/bryanbraun/poor-mans-styleguide/blob/gh-pages/index.html).
-
-**[See the full demo at bryanbraun.com/poor-mans-styleguide](https://bryanbraun.com/poor-mans-styleguide)**
 
 ---
 
