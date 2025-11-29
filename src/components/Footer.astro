@@ -2,7 +2,10 @@
   <span>
     Build with <a href="https://astro.build/" class="interactive">Astro</a>
   </span>
-  <span> Hand-crafted with ❤️ by <strong>Javier Linares</strong>. </span>
+  <div class="flex-column">
+    <span> Hand-crafted with ❤️ by <strong>Javier Linares</strong>. </span>
+    <span> No public or governmental funding.</span>
+  </div>
   <span>
     <a href="/styleguide" class="interactive">Style Guide</a>
   </span>
@@ -16,5 +19,10 @@
     padding: var(--space-lg) var(--space-md);
     gap: var(--space-md);
     backdrop-filter: blur(5px);
+  }
+  .flex-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 </style>

@@ -8,14 +8,8 @@ const blog1 = await getEntry('blog', 'blog1')
 const { Content } = await render(blog1)
 ---
 
-<Layout
-  title="Javier Linares | Data Engineer - Desarrollador especializado en Ingeniería de datos"
-  description="Data Engineer"
->
-  <Section title={blog1.data.title} id="blog">
+<Layout title="Blog" description="Blog of Javier Linares">
+  <article class="markdown">
     <Content />
-  </Section>
-  <footer>
-    Build with <a href="https://astro.build/">Astro</a>
-  </footer>
+  </article>
 </Layout>
