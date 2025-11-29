@@ -2,7 +2,8 @@
 import Layout from '../layouts/Layout.astro'
 import HeroSection from '../sections/HeroSection.astro'
 import ProjectSection from '../sections/ProjectSection.astro'
-import Section from '../components/Section.astro'
+import ContactSection from '../sections/ContactSection.astro'
+import TechStackSection from '../sections/TechStackSection.astro'
 ---
 
 <Layout
@@ -11,8 +12,6 @@ import Section from '../components/Section.astro'
 >
   <HeroSection />
   <ProjectSection />
-  <Section title="Tech Stack" id="tech-stack" />
-  <Section title="Contact" id="contact">
-    Hola! Soy <strong>Javier Linares</strong>, Data Engineer.
-  </Section>
+  <TechStackSection />
+  <ContactSection />
 </Layout>

@@ -1,0 +1,48 @@
+---
+import Section from '../components/Section.astro'
+import { Image } from 'astro:assets'
+import ProfileImage from '../images/javi.webp'
+---
+
+<Section title="Contact" id="contact">
+  <div class="contact-container">
+    <div class="first">
+      <h3>Hi! 👋</h3>
+      <p>
+        I am <mark>Javier Linares</mark>, a <strong>Data Engineer</strong>.
+      </p>
+      <p>
+        I have <ins>5 years</ins> of experience building solutions that help companies
+        improve their operations and analytics through <strong>software</strong>
+        and <strong>data-driven systems</strong>.
+      </p>
+    </div>
+    <Image
+      src={ProfileImage}
+      alt="Javier Linares"
+      width="300"
+      class="profile-image"
+    />
+  </div>
+</Section>
+<style>
+  h3 {
+    font-size: var(--font-size-lg);
+  }
+  p {
+    font-size: var(--font-size-md);
+  }
+  .contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-lg);
+    align-items: center;
+    justify-content: center;
+  }
+  .first {
+    max-width: 600px;
+  }
+  .profile-image {
+    border-radius: 8px;
+  }
+</style>

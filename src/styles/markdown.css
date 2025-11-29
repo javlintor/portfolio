@@ -46,17 +46,6 @@
   margin-bottom: var(--space-md);
 }
 
-/* Links */
-.markdown a {
-  color: var(--primary);
-  text-decoration: none;
-  transition: color var(--transition-ease);
-}
-
-.markdown a:hover {
-  color: var(--accent);
-}
-
 /* Lists */
 .markdown ul,
 .markdown ol {
@@ -139,7 +128,3 @@
 }
 
 /* Highlight text (mark) */
-.markdown mark {
-  background: var(--highlight);
-  padding: 0 0.2em;
-}
