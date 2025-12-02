@@ -15,18 +15,18 @@
   --gradient: linear-gradient(0deg, var(--bg) 95%, var(--bg-light));
   --gradient-hover: linear-gradient(0deg, var(--bg), var(--bg-light));
   --ff: 'JetBrains Mono', monospace;
-  --font-size-4xl: clamp(3rem, 7vw + 1rem, 7rem);
-  --font-size-2xl: clamp(2.5rem, 6vw + 1rem, 5rem);
-  --font-size-xl: clamp(2rem, 4vw, 5rem);
-  --font-size-lg: clamp(1.5rem, 2.5vw, 2.5rem);
-  --font-size-md: clamp(1rem, 1.7vw, 1.7rem);
-  --font-size-sm: 0.7rem;
-  --space-2xl: clamp(12rem, 14vw + 1rem, 16rem);
-  --space-xl: clamp(3rem, 7vw + 0.5rem, 12rem);
-  --space-lg: clamp(2rem, 4vw + 0.25rem, 4rem);
-  --space-md: clamp(1.5rem, 4vw, 2rem);
-  --space-sm: clamp(0.75rem, 1vw, 1rem);
-  --space-xs: clamp(0.5rem, 0.5vw, 0.75rem);
+  --font-4xl: bold clamp(3rem, 5vw, 7rem) / 1.5em var(--ff);
+  --font-2xl: bold 1.125rem/1.4em var(--ff);
+  --font-xl: bold 1rem/1.4em var(--ff);
+  --font-lg: 1rem/1.4em var(--ff);
+  --font-md: 0.875rem/1.4em var(--ff);
+  --font-sm: 0.875rem/1.4em var(--ff);
+  --space-2xl: 1.5rem;
+  --space-xl: 1.125rem;
+  --space-lg: 1rem;
+  --space-md: 0.875rem;
+  --space-sm: 0.7rem;
+  --space-xs: 0.5rem;
   --border: solid 2px var(--text-muted);
   --shadow:
     0px 2px 2px hsla(0, 0%, 0%, 0.07), 0px 4px 4px hsla(0, 0%, 0%, 0.15);
@@ -39,6 +39,7 @@
 }
 html {
   scroll-behavior: smooth;
+  font-size: 24px;
 }
 
 body {
@@ -63,7 +64,7 @@ button {
   background: var(--primary-lighter);
   padding: 0.5rem 1rem 0.7rem 1rem;
   color: var(--text);
-  font-size: var(--font-size-md);
+  font: var(--font-md);
   font-weight: 700;
   border-radius: 0.5rem;
   border: var(--border);
