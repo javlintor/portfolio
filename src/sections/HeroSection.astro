@@ -8,13 +8,13 @@ import DownIcon from '../images/down.svg'
 
 <section class="hero-section" id={rest.id}>
   <div>
-    <h1 class="hero-title animate__animated animate__fadeIn">
+    <h1 class="animate__animated animate__fadeIn">
       <span>Data</span>
       <br />
       <span class="gradient-text">Engineering</span>
       <br /><span>Solutions</span>
     </h1>
-    <h2 class="animate__animated animate__fadeInLeft">Javier Linares</h2>
+    <h2 class="animate__animated animate__fadeInLeft">Javier Linares 🧑🏻‍💻</h2>
     <div class="subtitle-icons animate__animated animate__fadeInUp">
       <a href="https://github.com/javlintor" class="interactive">
         <GithubIcon />
@@ -47,30 +47,27 @@ import DownIcon from '../images/down.svg'
     margin: 0 auto;
   }
   h1 {
-    font-weight: 700;
     color: var(--text);
     font: var(--font-4xl);
+    margin-bottom: var(--space-lg);
   }
-
   h2 {
-    font-weight: 400;
-    font: var(--font-lg);
-  }
-  .hero-title {
-    margin: 0;
+    font: 2rem/1.4em var(--ff);
+    color: var(--text-30);
+    margin-bottom: var(--space-md);
   }
   .subtitle-icons {
     display: flex;
-    gap: var(--space-md);
+    gap: var(--space-xl);
   }
   .subtitle-icons svg {
-    width: var(--space-md);
+    width: var(--icon-lg);
     height: auto;
   }
   #scroll-button {
     fill: var(--accent);
-    width: var(--space-md);
-    height: var(--space-md);
+    width: var(--icon-lg);
+    height: auto;
   }
   #scroll-button:hover {
     fill: var(--primary);

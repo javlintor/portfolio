@@ -15,13 +15,12 @@ import PipeIcon from '../../public/favicon.svg'
 
 <style>
   header {
-    font: var(--font-md);
     position: sticky;
     top: 0px;
     width: 100%;
     display: flex;
     justify-content: space-evenly;
-    padding: var(--space-md) 0;
+    padding: var(--space-lg) 0;
     z-index: 99;
   }
   header:not(.scrolled) {
@@ -35,17 +34,18 @@ import PipeIcon from '../../public/favicon.svg'
 
   .nav {
     display: flex;
-    gap: var(--space-lg);
+    gap: var(--space-xl);
   }
 
   .nav a {
+    font: var(--font-md);
     color: var(--text);
   }
   .nav a:hover {
-    color: var(--accent);
+    color: var(--text-40);
   }
   .pipe-icon {
-    width: var(--space-md);
+    width: var(--space-xl);
     height: auto;
   }
 </style>
