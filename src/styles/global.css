@@ -16,7 +16,7 @@
   --bg-gradient: linear-gradient(transparent, var(--bg-dark) 90%);
   --gradient: linear-gradient(0deg, var(--bg) 95%, var(--bg-light));
   --gradient-hover: linear-gradient(0deg, var(--bg), var(--bg-light));
-  --ff: 'JetBrains Mono', monospace;
+  --ff: 'Helvetica Neue', monospace;
   --font-4xl: bold 4rem / 1.5em var(--ff);
   --font-2xl: bold 2rem/1.4em var(--ff);
   --font-xl: bold 1rem/1.4em var(--ff);
@@ -34,12 +34,22 @@
   --border: solid 2px var(--text-muted);
   --shadow:
     0px 2px 2px hsla(0, 0%, 0%, 0.07), 0px 4px 4px hsla(0, 0%, 0%, 0.15);
-  --primary: hsl(127, 16%, 45%);
+  --primary: hsl(127, 16%, 50%);
   --secondary: hsl(127, 16%, 70%);
   --accent: hsl(127, 16%, 60%);
   --red: hsl(0, 30%, 60%);
   --gradient-text: linear-gradient(to right, var(--primary), var(--highlight));
   --transition-ease: 0.3s ease;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: boder-box;
+}
+
+:where(body) {
+  margin: 0;
 }
 
 html {
@@ -98,39 +108,17 @@ button:hover {
 img {
   box-shadow: var(--shadow);
 }
+
 .gradient-text {
   background: var(--gradient-text);
   background-clip: text;
   color: transparent;
 }
 
-.container-x {
-  display: flex;
-  gap: 100px;
-  align-items: center;
-  justify-content: center;
-}
 .container-center {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.container-y {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-a {
-  cursor: pointer;
-  color: var(--primary);
-  text-decoration: none;
-  transition: color var(--transition-ease);
-}
-
-a:hover {
-  color: var(--accent);
 }
 
 .interactive {
@@ -147,10 +135,6 @@ a:hover {
   color: var(--primary);
   transform: translateY(-1px);
   opacity: 0.8;
-}
-
-.primary {
-  color: var(--primary);
 }
 
 mark {
