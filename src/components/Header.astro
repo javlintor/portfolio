@@ -3,14 +3,16 @@ import PipeIcon from '../../public/favicon.svg'
 ---
 
 <header>
-  <a href="/">
-    <PipeIcon class="pipe-icon" />
-  </a>
-  <nav class="nav">
-    <a href="/#projects">Projects</a>
-    <a href="/blog">Blog</a>
-    <a href="/#contact">Contact</a>
-  </nav>
+  <div class="header-container">
+    <a href="/">
+      <PipeIcon class="pipe-icon" />
+    </a>
+    <nav class="nav">
+      <a href="/#projects">Projects</a>
+      <a href="/blog">Blog</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+  </div>
 </header>
 
 <style>
@@ -18,9 +20,6 @@ import PipeIcon from '../../public/favicon.svg'
     position: sticky;
     top: 0px;
     width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    padding: var(--space-lg) 0;
     z-index: 99;
   }
   header:not(.scrolled) {
@@ -31,12 +30,17 @@ import PipeIcon from '../../public/favicon.svg'
   header.scrolled {
     backdrop-filter: blur(5px);
   }
-
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--space-lg) 0;
+    width: var(--section-width);
+    margin: 0 auto;
+  }
   .nav {
     display: flex;
     gap: var(--space-xl);
   }
-
   .nav a {
     font: var(--font-md);
     color: var(--text);

@@ -29,6 +29,7 @@
   --space-md: 0.618em;
   --space-sm: 0.272em;
   --space-xs: 0.128em;
+  --section-width: min(1000px, 80vw);
   --icon-lg: 2em;
   --icon-md: 1em;
   --border: solid 2px var(--text-muted);

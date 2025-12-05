@@ -10,9 +10,8 @@ import DownIcon from '../images/down.svg'
   <div>
     <h1 class="animate__animated animate__fadeIn">
       <span>Data</span>
-      <br />
       <span class="gradient-text">Engineering</span>
-      <br /><span>Solutions</span>
+      <br /><span class="h1-secondary">Solutions</span>
     </h1>
     <h2 class="animate__animated animate__fadeInLeft">Javier Linares 🧑🏻‍💻</h2>
     <div class="subtitle-icons animate__animated animate__fadeInUp">
@@ -41,15 +40,19 @@ import DownIcon from '../images/down.svg'
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 90%;
-    max-width: 1000px;
-    min-height: 100vh;
+    width: var(--section-width);
     margin: 0 auto;
+    min-height: 100vh;
   }
   h1 {
     color: var(--text);
     font: var(--font-4xl);
+    letter-spacing: 1px;
     margin-bottom: var(--space-lg);
+  }
+  h1 .h1-secondary {
+    font: var(--font-4xl);
+    font-weight: normal;
   }
   h2 {
     font: 2rem/1.4em var(--ff);
