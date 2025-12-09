@@ -16,7 +16,7 @@
   --bg-gradient: linear-gradient(transparent, var(--bg-dark) 90%);
   --gradient: linear-gradient(0deg, var(--bg) 95%, var(--bg-light));
   --gradient-hover: linear-gradient(0deg, var(--bg), var(--bg-light));
-  --ff: 'Helvetica Neue', monospace;
+  --ff: 'JetBrains Mono', monospace;
   --font-4xl: bold 4rem / 1.5em var(--ff);
   --font-2xl: bold 2rem/1.4em var(--ff);
   --font-xl: bold 1rem/1.4em var(--ff);
@@ -60,7 +60,7 @@ html {
 
 @media (max-width: 750px) {
   html {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 

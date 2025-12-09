@@ -10,8 +10,10 @@ import DownIcon from '../images/down.svg'
   <div>
     <h1 class="animate__animated animate__fadeIn">
       <span>Data</span>
+      <br />
       <span class="gradient-text">Engineering</span>
-      <br /><span class="h1-secondary">Solutions</span>
+      <br />
+      <span>Solutions</span>
     </h1>
     <h2 class="animate__animated animate__fadeInLeft">Javier Linares 🧑🏻‍💻</h2>
     <div class="subtitle-icons animate__animated animate__fadeInUp">
@@ -39,16 +41,19 @@ import DownIcon from '../images/down.svg'
   .hero-section {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     width: var(--section-width);
-    margin: 0 auto;
-    min-height: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: var(--space-xl);
+    min-height: 90vh;
   }
   h1 {
-    color: var(--text);
+    color: var(--text-20);
     font: var(--font-4xl);
     letter-spacing: 1px;
     margin-bottom: var(--space-lg);
+    margin-top: var(--space-sm);
   }
   h1 .h1-secondary {
     font: var(--font-4xl);
