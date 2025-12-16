@@ -24,58 +24,55 @@ const technologies = await getEntries(project.data.technologies)
       <GithubIcon class="interactive" />
     </a>
   </div>
-
-  <style>
-    h3 {
-      font: var(--font-lg);
-      color: var(--text);
-      margin: var(--space-sm) 0 var(--space-xs) 0;
-      display: flex;
-      gap: var(--space-sm);
-    }
-    .project-card {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      flex: 1 1 auto;
-      padding: var(--space-sm) var(--space-sm);
-      transition: all var(--transition-ease);
-      background: var(--gradient);
-      padding: 1.5rem;
-      border-radius: 1rem;
-      border: var(--border);
-      box-shadow: var(--shadow);
-    }
-    .project-card:hover {
-      background: var(--gradient-hover);
-      transform: scale(1.02);
-    }
-    a {
-      display: flex;
-    }
-    svg {
-      width: var(--space-md);
-      height: var(--space-md);
-      fill: var(--text);
-      transition: fill var(--transition-ease);
-    }
-    .project-links {
-      margin-top: var(--space-sm);
-      display: flex;
-    }
-    .link-secondary {
-      display: none;
-    }
-    .link-secondary svg {
-      fill: var(--bg);
-      stroke: var(--text);
-    }
-    .project-card:hover .link-secondary {
-      display: inline;
-    }
-    .link-secondary:hover svg {
-      stroke: var(--primary);
-      cursor: pointer;
-    }
-  </style>
 </div>
+
+<style>
+  h3 {
+    font: var(--font-xl);
+    /* display: flex; */
+    /* gap: var(--space-sm); */
+  }
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1 1 auto;
+    padding: var(--space-md) var(--space-lg);
+    transition: all var(--transition-ease);
+    background: var(--gradient);
+    border-radius: 1rem;
+    border: var(--border);
+    box-shadow: var(--shadow);
+  }
+  .project-card:hover {
+    background: var(--gradient-hover);
+    transform: scale(1.02);
+  }
+  a {
+    display: flex;
+  }
+  svg {
+    width: var(--space-md);
+    height: var(--space-md);
+    fill: var(--text);
+    transition: fill var(--transition-ease);
+  }
+  .project-links {
+    margin-top: var(--space-sm);
+    display: flex;
+  }
+  .link-secondary {
+    display: none;
+  }
+  .link-secondary svg {
+    fill: var(--bg);
+    stroke: var(--text);
+  }
+  .project-card:hover .link-secondary {
+    display: inline;
+  }
+  .link-secondary:hover svg {
+    stroke: var(--primary);
+    cursor: pointer;
+  }
+</style>

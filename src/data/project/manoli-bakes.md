@@ -4,6 +4,7 @@ githubLink: https://github.com/javlintor/dotfiles
 description: "Short Project description"
 technologies:
 - nvim
+- django
 ---
 # My First Blog Post
 

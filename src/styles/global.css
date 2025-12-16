@@ -17,21 +17,22 @@
   --gradient: linear-gradient(0deg, var(--bg) 95%, var(--bg-light));
   --gradient-hover: linear-gradient(0deg, var(--bg), var(--bg-light));
   --ff: 'JetBrains Mono', monospace;
-  --font-4xl: bold 4rem / 1.5em var(--ff);
-  --font-2xl: bold 2rem/1.4em var(--ff);
-  --font-xl: bold 1rem/1.4em var(--ff);
-  --font-lg: 1rem/1.4em var(--ff);
-  --font-md: 0.875rem/1.4em var(--ff);
-  --font-sm: 0.875rem/1.4em var(--ff);
-  --space-2xl: 2.618em;
-  --space-xl: 1.618em;
-  --space-lg: 1em;
-  --space-md: 0.618em;
-  --space-sm: 0.272em;
-  --space-xs: 0.128em;
+  --font-4xl: bold 4rem / 6rem var(--ff);
+  --font-2xl: bold 2rem / 3rem var(--ff);
+  --font-xl: 1.5rem / 3rem var(--ff);
+  --font-lg: 1rem / 1.4 rem var(--ff);
+  --font-md: bold 0.875rem / 1.4em var(--ff);
+  --font-sm: 0.875rem / 1em var(--ff);
+  --font-xs: 0.5rem / 0.7em var(--ff);
+  --space-2xl: 3.927em;
+  --space-xl: 2.427em;
+  --space-lg: 1.5em;
+  --space-md: 0.927em;
+  --space-sm: 0.408em;
+  --space-xs: 0.192em;
   --section-width: min(1000px, 80vw);
   --icon-lg: 2em;
-  --icon-md: 1em;
+  --icon-md: 1.5em;
   --border: solid 2px var(--text-muted);
   --shadow:
     0px 2px 2px hsla(0, 0%, 0%, 0.07), 0px 4px 4px hsla(0, 0%, 0%, 0.15);
@@ -59,6 +60,9 @@ html {
 }
 
 @media (max-width: 750px) {
+  :root {
+    --section-width: 90vw;
+  }
   html {
     font-size: 14px;
   }
@@ -141,4 +145,19 @@ img {
 mark {
   background: var(--highlight);
   padding: 0 0.2em;
+}
+
+a {
+  text-decoration: none;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
 }
