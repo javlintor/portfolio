@@ -9,7 +9,7 @@ const technologies = await getEntries(project.data.technologies)
 ---
 
 <div class="project-card">
-  <div>
+  <div class="project-card-title">
     <h3>
       {project.data.title}
       <a href=`project/${project.id}` class="link-secondary">
@@ -17,8 +17,8 @@ const technologies = await getEntries(project.data.technologies)
       </a>
     </h3>
     {technologies.map((technology) => <Badge technology={technology} />)}
-    <p>{project.data.description}</p>
   </div>
+  <p>{project.data.description}</p>
   <div class="project-links">
     <a href={project.data.githubLink}>
       <GithubIcon class="interactive" />
@@ -28,9 +28,8 @@ const technologies = await getEntries(project.data.technologies)
 
 <style>
   h3 {
-    font: var(--font-xl);
-    /* display: flex; */
-    /* gap: var(--space-sm); */
+    font: var(--font-lg);
+    font-weight: bold;
   }
   .project-card {
     display: flex;
@@ -48,12 +47,15 @@ const technologies = await getEntries(project.data.technologies)
     background: var(--gradient-hover);
     transform: scale(1.02);
   }
+  .project-card-title {
+    margin-bottom: var(--space-lg);
+  }
   a {
     display: flex;
   }
-  svg {
-    width: var(--space-md);
-    height: var(--space-md);
+  .project-links svg {
+    width: var(--icon-md);
+    height: auto;
     fill: var(--text);
     transition: fill var(--transition-ease);
   }
@@ -65,6 +67,8 @@ const technologies = await getEntries(project.data.technologies)
     display: none;
   }
   .link-secondary svg {
+    width: var(--icon-sm);
+    height: auto;
     fill: var(--bg);
     stroke: var(--text);
   }

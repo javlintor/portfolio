@@ -3,7 +3,6 @@ const { class: className, ...rest } = Astro.props
 import GithubIcon from '../images/github.svg'
 import LinkedInIcon from '../images/linkedin.svg'
 import MaltIcon from '../images/malt.svg'
-import DownIcon from '../images/down.svg'
 ---
 
 <section class="hero-section" id={rest.id}>
@@ -40,9 +39,8 @@ import DownIcon from '../images/down.svg'
     min-height: 90vh;
   }
   h1 {
-    color: var(--text-20);
+    color: var(--text);
     font: var(--font-4xl);
-    font-weight: 700;
     margin-bottom: var(--space-lg);
     margin-top: var(--space-sm);
   }
@@ -56,16 +54,7 @@ import DownIcon from '../images/down.svg'
     gap: var(--space-lg);
   }
   .subtitle-icons svg {
-    width: var(--icon-md);
-    height: auto;
-  }
-  #scroll-button {
-    fill: var(--accent);
     width: var(--icon-lg);
     height: auto;
-  }
-  #scroll-button:hover {
-    fill: var(--primary);
-    transition: fill var(--transition-ease);
   }
 </style>
