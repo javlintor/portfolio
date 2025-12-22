@@ -3,27 +3,27 @@
   font-family: var(--ff);
   color: var(--text);
   line-height: 1.7;
-  font: var(--font-md);
+  font-size: var(--font-md);
   max-width: 70ch;
   margin-inline: auto;
 }
 
 .markdown h1 {
-  font: var(--font-2xl);
+  font-size: var(--font-2xl);
 }
 
 .markdown h2 {
-  font: var(--font-xl);
+  font-size: var(--font-xl);
 }
 
 .markdown h3 {
-  font: var(--font-lg);
+  font-size: var(--font-lg);
 }
 
 .markdown h4,
 .markdown h5,
 .markdown h6 {
-  font: var(--font-md);
+  font-size: var(--font-md);
 }
 
 /* Paragraphs */
@@ -98,7 +98,7 @@
   width: 100%;
   border-collapse: collapse;
   margin: var(--space-lg) 0;
-  font: var(--font-md);
+  font-size: var(--font-md);
 }
 
 .markdown th,
