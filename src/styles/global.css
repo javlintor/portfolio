@@ -21,6 +21,7 @@
   --font-xl: calc(var(--font-lg) * 1.5);
   --font-2xl: calc(var(--font-xl) * 1.5);
   --font-4xl: calc(var(--font-2xl) * 1.5);
+  --font-8xl: calc(var(--font-4xl) * 1.3);
   --font-sm: calc(var(--font-md) / 1.5);
   --font-xs: calc(var(--font-sm) / 1.5);
   --space-md: 1rem;

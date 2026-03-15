@@ -30,12 +30,9 @@ const technologies = await getEntries(project.data.technologies)
   h3 {
     font-size: var(--font-lg);
     font-weight: bold;
+    margin-bottom: var(--space-sm);
   }
   .project-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex: 1 1 auto;
     padding: var(--space-md) var(--space-lg);
     transition: all var(--transition-ease);
     background: var(--gradient);

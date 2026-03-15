@@ -11,6 +11,7 @@ import ProfileImage from '../images/javi.webp'
       <p>
         I am <mark>Javier Linares</mark>, a <strong>Data Engineer</strong>.
       </p>
+      <br />
       <p>
         I have <ins>5 years</ins> of experience building solutions that help companies
         improve their operations and analytics through <strong>software</strong>
@@ -31,16 +32,18 @@ import ProfileImage from '../images/javi.webp'
   </div>
 </Section>
 <style>
+  h3 {
+    font-size: var(--font-xl);
+    margin-bottom: var(--space-lg);
+  }
   p {
-    font-size: var(--font-md);
+    font-size: var(--font-lg);
     line-height: 1.7;
   }
   .contact-container {
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-lg);
-    align-items: center;
-    justify-content: center;
   }
   .first {
     max-width: 600px;
@@ -50,7 +53,7 @@ import ProfileImage from '../images/javi.webp'
     border: var(--border);
   }
   .button-container {
-    margin-top: var(--space-lg);
+    margin-top: var(--space-2xl);
     display: flex;
     justify-content: center;
   }
