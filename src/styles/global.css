@@ -57,7 +57,7 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 24px;
+  font-size: 16px;
 }
 
 @media (max-width: 750px) {
