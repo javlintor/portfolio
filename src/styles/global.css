@@ -9,9 +9,9 @@
   --bg-light: hsl(0 5% 100%);
   --bg-dots-spacing: 30px;
   --text: hsl(0 3% 20%);
-  --text-30: hsl(0 3% 30%);
-  --text-40: hsl(0 3% 40%);
-  --highlight: hsl(45, 90%, 60%);
+  --text-subtle: hsl(0 3% 30%);
+  --text-muted: hsl(0 3% 40%);
+  --highlight: hsl(45 90% 60%);
   --bg-gradient: linear-gradient(transparent, var(--bg-dark) 90%);
   --gradient: linear-gradient(0deg, var(--bg) 95%, var(--bg-light));
   --gradient-hover: linear-gradient(0deg, var(--bg), var(--bg-light));
@@ -20,28 +20,35 @@
   --font-lg: calc(var(--font-md) * 1.5);
   --font-xl: calc(var(--font-lg) * 1.5);
   --font-2xl: calc(var(--font-xl) * 1.5);
-  --font-4xl: calc(var(--font-2xl) * 1.5);
-  --font-8xl: calc(var(--font-4xl) * 1.3);
+  --font-3xl: calc(var(--font-2xl) * 1.5);
+  --font-4xl: calc(var(--font-3xl) * 1.5);
   --font-sm: calc(var(--font-md) / 1.5);
   --font-xs: calc(var(--font-sm) / 1.5);
   --space-md: 1rem;
   --space-lg: calc(var(--space-md) * 1.5);
   --space-xl: calc(var(--space-lg) * 1.5);
   --space-2xl: calc(var(--space-xl) * 1.5);
-  --space-4xl: calc(var(--space-2xl) * 1.5);
+  --space-3xl: calc(var(--space-2xl) * 1.5);
+  --space-4xl: calc(var(--space-3xl) * 1.5);
   --space-sm: calc(var(--space-md) / 1.5);
   --space-xs: calc(var(--space-sm) / 1.5);
   --section-width: min(1000px, 80vw);
   --icon-lg: 2em;
   --icon-md: 1.5em;
   --icon-sm: 1em;
-  --border: solid 2px var(--text-40);
+  --border-width: 2px;
+  --border-style: solid;
+  --border-color: var(--text-muted);
+  --border: var(--border-style) var(--border-width) var(--border-color);
   --shadow:
-    0px 2px 2px hsla(0, 0%, 0%, 0.07), 0px 4px 4px hsla(0, 0%, 0%, 0.15);
-  --primary: hsl(127, 16%, 50%);
-  --secondary: hsl(127, 16%, 70%);
-  --accent: hsl(127, 16%, 60%);
-  --red: hsl(0, 30%, 60%);
+    0px 2px 2px hsl(0 0% 0% / 0.07), 0px 4px 4px hsl(0 0% 0% / 0.15);
+  --color-brand-h: 127;
+  --color-brand-s: 16%;
+  --primary: hsl(var(--color-brand-h) var(--color-brand-s) 50%);
+  --primary-lighter: hsl(var(--color-brand-h) var(--color-brand-s) 80%);
+  --secondary: hsl(var(--color-brand-h) var(--color-brand-s) 70%);
+  --accent: hsl(var(--color-brand-h) var(--color-brand-s) 60%);
+  --red: hsl(0 30% 60%);
   --gradient-text: linear-gradient(to right, var(--primary), var(--highlight));
   --transition-ease: 0.3s ease;
 }
@@ -49,7 +56,7 @@
 *,
 *::before,
 *::after {
-  box-sizing: boder-box;
+  box-sizing: border-box;
 }
 
 :where(body) {
@@ -99,7 +106,7 @@ button {
   box-shadow: var(--shadow);
   cursor: pointer;
   text-decoration: none;
-  transition: all ease 0.2s;
+  transition: all var(--transition-ease);
 }
 button:hover {
   background: var(--primary);
@@ -131,11 +138,11 @@ img {
 .interactive {
   fill: var(--text);
   transition:
-    transform 0.2s ease,
-    opacity 0.2s ease,
-    fill 0.2s ease,
-    stroke 0.2s ease,
-    color 0.2s ease;
+    transform var(--transition-ease),
+    opacity var(--transition-ease),
+    fill var(--transition-ease),
+    stroke var(--transition-ease),
+    color var(--transition-ease);
 }
 .interactive:hover {
   fill: var(--primary);

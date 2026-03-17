@@ -47,7 +47,7 @@
 .markdown blockquote {
   border-left: 4px solid var(--accent);
   padding-left: var(--space-md);
-  color: var(--text-40);
+  color: var(--text-muted);
   margin: var(--space-lg) 0;
   background: var(--bg);
   padding: var(--space-sm) var(--space-md);
