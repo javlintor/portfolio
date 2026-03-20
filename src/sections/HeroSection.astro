@@ -32,6 +32,8 @@ import MaltIcon from '../images/malt.svg'
 <style>
   .hero-section {
     display: flex;
+    align-items: center;
+    padding-bottom: 20vh;
     width: var(--section-width);
     margin-left: auto;
     margin-right: auto;
@@ -41,7 +43,7 @@ import MaltIcon from '../images/malt.svg'
   }
   h1 {
     color: var(--text);
-    font-size: min(var(--font-4xl), 16vw);
+    font-size: clamp(var(--font-2xl), 8vw, 6rem);
     margin-bottom: var(--space-2xl);
   }
   h2 {

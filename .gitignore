@@ -25,3 +25,5 @@ pnpm-debug.log*
 
 # vim sessions
 *.vim
+
+CLAUDE.md
