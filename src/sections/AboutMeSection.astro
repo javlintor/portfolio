@@ -4,7 +4,7 @@ import { Image } from 'astro:assets'
 import ProfileImage from '../images/javi.webp'
 ---
 
-<Section title="About me" id="contact">
+<Section id="contact" className="no-min-height">
   <div class="contact-container">
     <div class="first">
       <h3>Hi! 👋</h3>
@@ -17,49 +17,56 @@ import ProfileImage from '../images/javi.webp'
         improve their operations and analytics through <strong>software</strong>
         and <strong>data-driven systems</strong>.
       </p>
+      <div class="button-container">
+        <a href="mailto:your@email.com?subject=Booking%20a%20Call&body=Hi%20Javier,"
+          >Book a call</a
+        >
+      </div>
     </div>
     <Image
       src={ProfileImage}
       alt="Javier Linares"
-      width="300"
+      width="280"
       class="profile-image"
     />
-  </div>
-  <div class="button-container">
-    <a href="mailto:your@email.com?subject=Booking%20a%20Call&body=Hi%20Javier,"
-      >Book a call ✉️</a
-    >
   </div>
 </Section>
 <style>
   h3 {
-    font-size: var(--font-xl);
-    margin-bottom: var(--space-lg);
+    font-size: var(--font-2xl);
+    margin-bottom: var(--space-xl);
   }
   p {
     font-size: var(--font-lg);
     line-height: 1.7;
+    color: var(--text-subtle);
   }
   .contact-container {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--space-lg);
+    gap: var(--space-3xl);
+    align-items: center;
   }
   .first {
-    max-width: 600px;
+    flex: 1;
+    min-width: 280px;
   }
   .profile-image {
-    border-radius: 8px;
+    border-radius: 12px;
     border: var(--border);
+    transition: box-shadow var(--transition-ease);
+  }
+  .profile-image:hover {
+    box-shadow:
+      0 8px 16px hsl(0 0% 0% / 0.12),
+      0 0 0 4px var(--secondary);
   }
   .button-container {
     margin-top: var(--space-2xl);
-    display: flex;
-    justify-content: center;
   }
   .button-container a {
     background: var(--secondary);
-    padding: 0.5rem 1rem 0.7rem 1rem;
+    padding: 0.5rem 1.5rem 0.7rem 1.5rem;
     color: var(--text);
     font-size: var(--font-md);
     font-weight: 700;
@@ -69,6 +76,7 @@ import ProfileImage from '../images/javi.webp'
     cursor: pointer;
     text-decoration: none;
     transition: all var(--transition-ease);
+    font-family: var(--ff);
   }
   .button-container a:hover {
     background: var(--accent);

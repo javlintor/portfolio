@@ -16,6 +16,9 @@ const { title, className, ...rest } = Astro.props
     margin-top: var(--space-4xl);
     min-height: 70vh;
   }
+  .section.no-min-height {
+    min-height: unset;
+  }
   .section-title {
     font-size: var(--font-2xl);
     color: var(--text);

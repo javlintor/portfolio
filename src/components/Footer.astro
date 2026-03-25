@@ -1,29 +1,45 @@
 <footer>
-  <span>
-    Build with <a href="https://astro.build/" class="interactive">Astro</a>
-  </span>
-  <div class="flex-column">
-    <span> Hand-crafted with ❤️ by <strong>Javier Linares</strong>. </span>
-    <span> No public or governmental funding.</span>
+  <div class="footer-inner">
+    <div class="footer-credits">
+      <span>Hand-crafted with ❤️ by <strong>Javier Linares</strong></span>
+      <span class="sep">·</span>
+      <span>Built with <a href="https://astro.build/" class="interactive" target="_blank" rel="noopener">Astro</a></span>
+      <span class="sep">·</span>
+      <span>No public or governmental funding.</span>
+    </div>
+    <a href="/styleguide" class="interactive styleguide-link">Style Guide</a>
   </div>
-  <span>
-    <a href="/styleguide" class="interactive">Style Guide</a>
-  </span>
 </footer>
+
 <style>
   footer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    margin-top: var(--space-2xl);
-    padding: var(--space-lg) var(--space-md);
-    gap: var(--space-lg);
     background-color: var(--bg-darker);
     border-top: var(--border);
+    padding: var(--space-xl) var(--space-md);
   }
-  .flex-column {
+  .footer-inner {
+    width: var(--section-width);
+    margin: 0 auto;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
     align-items: center;
+    gap: var(--space-md);
+  }
+  .footer-credits {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    align-items: center;
+    font-size: var(--font-sm);
+    color: var(--text-muted);
+  }
+  .sep {
+    color: var(--text-subtle);
+  }
+  .styleguide-link {
+    font-size: var(--font-sm);
+    color: var(--text-subtle);
+    text-decoration: none;
   }
 </style>
