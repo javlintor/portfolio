@@ -1,7 +1,7 @@
 ---
 import Badge from './Badge.astro'
 import GithubIcon from '../images/github.svg'
-import { getEntries } from 'astro:content'
+import { getEntries, type CollectionEntry } from 'astro:content'
 
 import LinkSecondaryIcon from '../images/link2.svg'
 const { project } = Astro.props
@@ -16,7 +16,7 @@ const technologies = await getEntries(project.data.technologies)
         <LinkSecondaryIcon class="interactive" />
       </a>
     </h3>
-    {technologies.map((technology) => <Badge technology={technology} />)}
+    {technologies.map((technology: CollectionEntry<'technologies'>) => <Badge technology={technology} />)}
   </div>
   <p>{project.data.description}</p>
   <div class="project-links">

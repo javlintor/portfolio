@@ -1,14 +1,14 @@
 ---
 import Section from '../components/Section.astro'
 import ProjectCard from '../components/ProjectCard.astro'
-import { getCollection } from 'astro:content'
+import { getCollection, type CollectionEntry } from 'astro:content'
 
 const projects = await getCollection('projects')
 ---
 
 <Section title="Projects" id="projects">
   <div class="project-gallery">
-    {projects.map((project) => <ProjectCard project={project} />)}
+    {projects.map((project: CollectionEntry<'projects'>) => <ProjectCard project={project} />)}
   </div>
 </Section>
 <style>
@@ -16,5 +16,7 @@ const projects = await getCollection('projects')
     display: flex;
     flex-direction: column;
     gap: var(--space-md);
+    max-width: clamp(400px, 75%, 700px);
+    margin-inline: auto;
   }
 </style>
