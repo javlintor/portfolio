@@ -2,6 +2,9 @@
 import Section from '../components/Section.astro'
 import { Image } from 'astro:assets'
 import ProfileImage from '../images/javi.webp'
+import GithubIcon from '../images/github.svg'
+import LinkedInIcon from '../images/linkedin.svg'
+import MaltIcon from '../images/malt.svg'
 ---
 
 <Section id="contact" className="no-min-height">
@@ -11,22 +14,27 @@ import ProfileImage from '../images/javi.webp'
       <p>
         I am <mark>Javier Linares</mark>, a <strong>Data Engineer</strong>.
       </p>
-      <br />
-      <p>
+      <p class="bio">
         I have <ins>5 years</ins> of experience building solutions that help companies
         improve their operations and analytics through <strong>software</strong>
         and <strong>data-driven systems</strong>.
       </p>
-      <div class="button-container">
-        <a href="mailto:your@email.com?subject=Booking%20a%20Call&body=Hi%20Javier,"
-          >Book a call</a
-        >
+      <div class="subtitle-icons animate__animated animate__fadeInUp">
+        <a href="https://github.com/javlintor" class="interactive">
+          <GithubIcon />
+        </a>
+        <a href="https://linkedin.com/javlintor" class="interactive">
+          <LinkedInIcon />
+        </a>
+        <a href="https://malt.com/javlintor" class="interactive">
+          <MaltIcon />
+        </a>
       </div>
     </div>
     <Image
       src={ProfileImage}
       alt="Javier Linares"
-      width="280"
+      width="320"
       class="profile-image"
     />
   </div>
@@ -34,26 +42,31 @@ import ProfileImage from '../images/javi.webp'
 <style>
   h3 {
     font-size: var(--font-2xl);
-    margin-bottom: var(--space-xl);
+    margin-bottom: var(--space-lg);
   }
   p {
-    font-size: var(--font-lg);
-    line-height: 1.7;
+    font-size: var(--font-md);
+    line-height: 1.8;
     color: var(--text-subtle);
+  }
+  p.bio {
+    margin-top: var(--space-lg);
   }
   .contact-container {
     display: flex;
-    flex-wrap: wrap;
     gap: var(--space-3xl);
     align-items: center;
   }
   .first {
     flex: 1;
-    min-width: 280px;
+    min-width: 260px;
   }
   .profile-image {
-    border-radius: 12px;
+    border-radius: 16px;
     border: var(--border);
+    width: clamp(200px, 25vw, 320px);
+    height: auto;
+    flex-shrink: 0;
     transition: box-shadow var(--transition-ease);
   }
   .profile-image:hover {
@@ -61,25 +74,26 @@ import ProfileImage from '../images/javi.webp'
       0 8px 16px hsl(0 0% 0% / 0.12),
       0 0 0 4px var(--secondary);
   }
-  .button-container {
-    margin-top: var(--space-2xl);
+  .subtitle-icons {
+    display: flex;
+    gap: var(--space-lg);
+    margin-top: var(--space-xl);
   }
-  .button-container a {
-    background: var(--secondary);
-    padding: 0.5rem 1.5rem 0.7rem 1.5rem;
-    color: var(--text);
-    font-size: var(--font-md);
-    font-weight: 700;
-    border-radius: 0.5rem;
-    border: var(--border);
-    box-shadow: var(--shadow);
-    cursor: pointer;
-    text-decoration: none;
-    transition: all var(--transition-ease);
-    font-family: var(--ff);
+  .subtitle-icons svg {
+    width: var(--icon-lg);
+    height: auto;
   }
-  .button-container a:hover {
-    background: var(--accent);
-    scale: 1.05;
+  @media (max-width: 750px) {
+    .contact-container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .subtitle-icons {
+      justify-content: center;
+    }
+    .profile-image {
+      width: clamp(160px, 50vw, 240px);
+    }
   }
 </style>
