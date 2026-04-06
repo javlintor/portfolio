@@ -5,6 +5,7 @@ description: We spend roughly 1,800 hours a year writing software, so it makes s
 technologies:
 - nvim
 - lua
+is_hidden: true
 ---
 
 # Neovim Configuration
