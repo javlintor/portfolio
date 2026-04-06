@@ -3,7 +3,7 @@ import Section from '../components/Section.astro'
 import ProjectCard from '../components/ProjectCard.astro'
 import { getCollection, type CollectionEntry } from 'astro:content'
 
-const projects = await getCollection('projects')
+const projects = (await getCollection('projects')).filter(p => !p.data.is_hidden)
 ---
 
 <Section title="Projects" id="projects">

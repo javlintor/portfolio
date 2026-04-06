@@ -5,6 +5,7 @@ description: "Short Project description"
 technologies:
 - nvim
 - django
+is_hidden: true
 ---
 # My First Blog Post
 

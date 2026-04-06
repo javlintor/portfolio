@@ -25,6 +25,7 @@ const projects = defineCollection({
     description: z.string(),
     githubLink: z.string(),
     technologies: z.array(reference('technologies')),
+    is_hidden: z.boolean().default(false),
   }),
 })
 
