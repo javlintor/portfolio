@@ -16,11 +16,10 @@ import MaltIcon from '../images/malt.svg'
       class="profile-image"
     />
     <div class="first">
-      <h3>Hi! 👋</h3>
-      <p>
+      <h3>
         <mark>Javi Linares</mark> is a <strong>Data Engineer</strong> with a passion
         for innovation and problem-solving.
-      </p>
+      </h3>
       <p class="bio">
         <ins>5 years</ins> of experience building solutions that help companies improve
         their operations and analytics through <strong>software</strong>
@@ -41,11 +40,6 @@ import MaltIcon from '../images/malt.svg'
   </div>
 </Section>
 <style>
-  h3 {
-    font-size: var(--font-h1);
-    font-weight: 700;
-    margin-bottom: var(--space-lg);
-  }
   p {
     font-size: var(--font-body);
     line-height: 1.5;
@@ -64,17 +58,17 @@ import MaltIcon from '../images/malt.svg'
     flex: 1;
     min-width: 260px;
   }
-.profile-image {
-  border-radius: 50%;
-  border: 1px solid var(--border-outline);
-  width: clamp(100px, 15vw, 200px);
-  height: auto;
-  aspect-ratio: 1;
-  object-fit: cover;
-  object-position: center 0%;
-  flex-shrink: 0;
-  box-shadow: 0 2px 4px rgba(15, 0, 0, 0.08);
-}
+  .profile-image {
+    border-radius: 50%;
+    border: 1px solid var(--border-outline);
+    width: clamp(100px, 15vw, 200px);
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: center 0%;
+    flex-shrink: 0;
+    box-shadow: 0 2px 4px rgba(15, 0, 0, 0.08);
+  }
   .subtitle-icons {
     display: flex;
     gap: var(--space-lg);
