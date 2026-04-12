@@ -63,10 +63,13 @@ import MaltIcon from '../images/malt.svg'
     min-width: 260px;
   }
   .profile-image {
-    border-radius: 16px;
+    border-radius: 50%;
     border: var(--border);
     width: clamp(200px, 25vw, 320px);
     height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: center 0%;
     flex-shrink: 0;
     transition: box-shadow var(--transition-ease);
   }
