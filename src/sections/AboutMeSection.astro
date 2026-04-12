@@ -9,17 +9,24 @@ import MaltIcon from '../images/malt.svg'
 
 <Section id="contact" className="no-min-height">
   <div class="contact-container">
+    <Image
+      src={ProfileImage}
+      alt="Javier Linares"
+      width="200"
+      class="profile-image"
+    />
     <div class="first">
       <h3>Hi! 👋</h3>
       <p>
-        I am <mark>Javier Linares</mark>, a <strong>Data Engineer</strong>.
+        <mark>Javi Linares</mark> is a <strong>Data Engineer</strong> with a passion
+        for innovation and problem-solving.
       </p>
       <p class="bio">
-        I have <ins>5 years</ins> of experience building solutions that help companies
-        improve their operations and analytics through <strong>software</strong>
+        <ins>5 years</ins> of experience building solutions that help companies improve
+        their operations and analytics through <strong>software</strong>
         and <strong>data-driven systems</strong>.
       </p>
-      <div class="subtitle-icons animate__animated animate__fadeInUp">
+      <div class="subtitle-icons">
         <a href="https://github.com/javlintor" class="interactive">
           <GithubIcon />
         </a>
@@ -31,26 +38,21 @@ import MaltIcon from '../images/malt.svg'
         </a>
       </div>
     </div>
-    <Image
-      src={ProfileImage}
-      alt="Javier Linares"
-      width="320"
-      class="profile-image"
-    />
   </div>
 </Section>
 <style>
   h3 {
-    font-size: var(--font-2xl);
+    font-size: var(--font-h1);
+    font-weight: 700;
     margin-bottom: var(--space-lg);
   }
   p {
-    font-size: var(--font-lg);
-    line-height: 1.8;
-    color: var(--text-subtle);
+    font-size: var(--font-body);
+    line-height: 1.5;
+    color: var(--text-secondary);
   }
   p.bio {
-    font-size: var(--font-md);
+    font-size: var(--font-body);
     margin-top: var(--space-lg);
   }
   .contact-container {
@@ -62,22 +64,17 @@ import MaltIcon from '../images/malt.svg'
     flex: 1;
     min-width: 260px;
   }
-  .profile-image {
-    border-radius: 50%;
-    border: var(--border);
-    width: clamp(200px, 25vw, 320px);
-    height: auto;
-    aspect-ratio: 1;
-    object-fit: cover;
-    object-position: center 0%;
-    flex-shrink: 0;
-    transition: box-shadow var(--transition-ease);
-  }
-  .profile-image:hover {
-    box-shadow:
-      0 8px 16px hsl(0 0% 0% / 0.12),
-      0 0 0 4px var(--secondary);
-  }
+.profile-image {
+  border-radius: 50%;
+  border: 1px solid var(--border-outline);
+  width: clamp(100px, 15vw, 200px);
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center 0%;
+  flex-shrink: 0;
+  box-shadow: 0 2px 4px rgba(15, 0, 0, 0.08);
+}
   .subtitle-icons {
     display: flex;
     gap: var(--space-lg);
@@ -87,7 +84,10 @@ import MaltIcon from '../images/malt.svg'
     width: var(--icon-lg);
     height: auto;
   }
-  @media (max-width: 750px) {
+  .subtitle-icons a {
+    text-decoration: none;
+  }
+  @media (max-width: 640px) {
     .contact-container {
       flex-direction: column;
       align-items: center;
@@ -97,7 +97,7 @@ import MaltIcon from '../images/malt.svg'
       justify-content: center;
     }
     .profile-image {
-      width: clamp(160px, 50vw, 240px);
+      width: clamp(80px, 30vw, 120px);
     }
   }
 </style>

@@ -1,15 +1,17 @@
 ---
 import PipeIcon from '../../public/favicon.svg'
+import ThemeToggle from './ThemeToggle.astro'
 ---
 
 <header>
   <div class="header-container">
-    <a href="/">
+    <a href="/" class="logo-link">
       <PipeIcon class="pipe-icon" />
     </a>
     <nav class="nav">
       <a href="/#projects">Projects</a>
       <a href="/blog">Blog</a>
+      <ThemeToggle />
     </nav>
   </div>
 </header>
@@ -20,19 +22,13 @@ import PipeIcon from '../../public/favicon.svg'
     top: 0px;
     width: 100%;
     z-index: 99;
-  }
-  header:not(.scrolled) {
-    background-color: transparent;
-    backdrop-filter: none;
-  }
-
-  header.scrolled {
-    backdrop-filter: blur(5px);
+    background-color: var(--bg);
   }
   .header-container {
     display: flex;
     justify-content: space-between;
-    padding: var(--space-lg) 0;
+    align-items: center;
+    padding: var(--space-md) 0;
     width: var(--section-width);
     margin: 0 auto;
   }
@@ -40,20 +36,22 @@ import PipeIcon from '../../public/favicon.svg'
     display: flex;
     gap: var(--space-xl);
   }
+  .nav a {
+    font-size: var(--font-body);
+    font-weight: 500;
+    color: var(--text);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+  }
+  .nav a:hover {
+    color: var(--accent);
+  }
+  .logo-link {
+    text-decoration: none;
+  }
   .pipe-icon {
     width: var(--space-xl);
     height: auto;
   }
 </style>
-
-<script>
-  window.addEventListener('scroll', () => {
-    const header = document.querySelector('header')
-    if (!header) return
-    if (window.scrollY > 50) {
-      header.classList.add('scrolled')
-    } else {
-      header.classList.remove('scrolled')
-    }
-  })
-</script>

@@ -1,19 +1,19 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-credits">
-      <span>Hand-crafted with ❤️ by <strong>Javier Linares</strong></span>
+      <span>Hand-crafted by <strong>Javier Linares</strong></span>
       <span class="sep">·</span>
-      <span>Built with <a href="https://astro.build/" class="interactive" target="_blank" rel="noopener">Astro</a></span>
+      <span>Built with <a href="https://astro.build/" target="_blank" rel="noopener">Astro</a></span>
       <span class="sep">·</span>
       <span>No public or governmental funding.</span>
     </div>
-    <a href="/styleguide" class="interactive styleguide-link">Style Guide</a>
+    <a href="/styleguide" class="styleguide-link">Style Guide</a>
   </div>
 </footer>
 
 <style>
   footer {
-    background-color: var(--bg-darker);
+    background-color: var(--bg);
     border-top: var(--border);
     padding: var(--space-xl) var(--space-md);
   }
@@ -31,15 +31,23 @@
     flex-wrap: wrap;
     gap: var(--space-sm);
     align-items: center;
-    font-size: var(--font-sm);
-    color: var(--text-muted);
+    font-size: var(--font-caption);
+    color: var(--text-secondary);
+  }
+  .footer-credits a {
+    color: var(--text-secondary);
+  }
+  .footer-credits a:hover {
+    color: var(--accent);
   }
   .sep {
-    color: var(--text-subtle);
+    color: var(--text-muted);
   }
   .styleguide-link {
-    font-size: var(--font-sm);
-    color: var(--text-subtle);
-    text-decoration: none;
+    font-size: var(--font-caption);
+    color: var(--text-secondary);
+  }
+  .styleguide-link:hover {
+    color: var(--accent);
   }
 </style>

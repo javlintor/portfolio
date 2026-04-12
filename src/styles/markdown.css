@@ -2,28 +2,39 @@
 .markdown {
   font-family: var(--ff);
   color: var(--text);
-  line-height: 1.7;
-  font-size: var(--font-md);
+  line-height: 1.5;
+  font-size: var(--font-body);
   max-width: 70ch;
   margin-inline: auto;
 }
 
 .markdown h1 {
-  font-size: var(--font-2xl);
+  font-size: var(--font-h1);
+  font-weight: 700;
+  line-height: 1.5;
+  margin-bottom: var(--space-lg);
 }
 
 .markdown h2 {
-  font-size: var(--font-xl);
+  font-size: var(--font-body);
+  font-weight: 700;
+  line-height: 1.5;
+  margin-bottom: var(--space-md);
 }
 
 .markdown h3 {
-  font-size: var(--font-lg);
+  font-size: var(--font-body);
+  font-weight: 700;
+  line-height: 1.5;
+  margin-bottom: var(--space-sm);
 }
 
 .markdown h4,
 .markdown h5,
 .markdown h6 {
-  font-size: var(--font-md);
+  font-size: var(--font-body);
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
 }
 
 /* Paragraphs */
@@ -36,7 +47,7 @@
 .markdown ol {
   margin: var(--space-md) 0;
   padding-left: var(--space-lg);
-  line-height: 1.7;
+  line-height: 1.5;
 }
 
 .markdown li {
@@ -47,27 +58,28 @@
 .markdown blockquote {
   border-left: 4px solid var(--accent);
   padding-left: var(--space-md);
-  color: var(--text-muted);
+  color: var(--text-secondary);
   margin: var(--space-lg) 0;
-  background: var(--bg);
+  background: var(--bg-surface);
   padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius);
 }
 
 /* Code inline */
 .markdown code {
-  background: var(--bg-dark);
+  background: var(--bg-surface);
   padding: 0.15em 0.4em;
-  border-radius: 4px;
+  border-radius: var(--radius);
   font-size: 0.9em;
 }
 
 /* Code blocks */
 .markdown pre {
-  background: var(--bg-dark);
+  background: var(--bg-surface);
   padding: var(--space-md);
-  border-radius: 8px;
+  border-radius: var(--radius);
   overflow-x: auto;
-  box-shadow: var(--shadow);
+  border: var(--border);
   margin: var(--space-lg) 0;
 }
 
@@ -82,8 +94,7 @@
   height: auto;
   margin: var(--space-md) auto;
   display: block;
-  border-radius: 8px;
-  box-shadow: var(--shadow);
+  border-radius: var(--radius);
 }
 
 /* Horizontal rule */
@@ -98,7 +109,7 @@
   width: 100%;
   border-collapse: collapse;
   margin: var(--space-lg) 0;
-  font-size: var(--font-md);
+  font-size: var(--font-body);
 }
 
 .markdown th,
@@ -108,8 +119,6 @@
 }
 
 .markdown th {
-  background: var(--bg);
-  font-weight: 600;
+  background: var(--bg-surface);
+  font-weight: 700;
 }
-
-/* Highlight text (mark) */

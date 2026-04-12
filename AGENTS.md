@@ -10,6 +10,10 @@ Astro 5 personal portfolio site.
 - `src/layouts/` - Page layouts
 - `src/styles/` - Global CSS
 
+## Design
+
+Design rules are defined in DESIGN.md, but the font used is Jetbrains monospace instead of Berkeley Mono
+
 ## Content
 
 Content is stored as markdown files in `src/data/`:

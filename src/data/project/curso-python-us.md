@@ -1,7 +1,7 @@
 ---
 title: 'Curso Python US'
 githubLink: https://github.com/javlintor/curso-python-us
-description: 'Universidad de Sevilla Python course taught at the Faculty of Law'
+description: 'Universidad de Sevilla Python course taught at the Faculty of Mathematics and & Statistics. Introductory course on python and data ecosytem.'
 technologies:
   - python
 ---

@@ -10,7 +10,7 @@ const foregroundColor = technology.data.foregroundColor
 const backgroundColor = technology.data.backgroundColor
 ---
 
-<a class="badge interactive" href={technology.data.link}>
+<a class="badge" href={technology.data.link}>
   <Image src={technology.data.icon} alt={`${technology.data.label} logo`} />
   <span>{technology.data.label}</span>
 </a>
@@ -19,16 +19,21 @@ const backgroundColor = technology.data.backgroundColor
   .badge {
     display: inline-flex;
     background-color: var(--backgroundColor);
-    padding: 4px 8px;
-    border: 2px solid var(--foregroundColor);
-    font-size: var(--font-sm);
+    padding: var(--space-xs) var(--space-sm);
+    border: 1px solid var(--foregroundColor);
+    font-size: var(--font-caption);
     align-items: center;
     gap: var(--space-sm);
-    border-radius: 9999px;
+    border-radius: var(--radius);
     user-select: none;
+    text-decoration: none;
+    transition: opacity var(--transition-fast);
+  }
+  .badge:hover {
+    opacity: 0.8;
   }
   .badge span {
-    color: var(--text);
+    color: var(--foregroundColor);
   }
   .badge img {
     width: 0.875rem;

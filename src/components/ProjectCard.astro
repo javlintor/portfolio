@@ -28,33 +28,36 @@ const technologies = await getEntries(project.data.technologies)
 
 <style>
   h3 {
-    font-size: var(--font-lg);
-    font-weight: bold;
+    font-size: var(--font-body);
+    font-weight: 700;
     margin-bottom: var(--space-sm);
   }
   .project-card {
     padding: var(--space-md) var(--space-lg);
-    transition: all var(--transition-ease);
-    background: var(--gradient);
-    border-radius: 1rem;
+    background: var(--bg-surface);
+    border-radius: var(--radius);
     border: var(--border);
-    box-shadow: var(--shadow);
+    transition: border-color var(--transition-fast);
   }
   .project-card:hover {
-    background: var(--gradient-hover);
-    transform: scale(1.02);
+    border-color: var(--border-outline);
   }
   .project-card-title {
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-md);
+  }
+  p {
+    color: var(--text-secondary);
+    line-height: 1.5;
   }
   a {
     display: flex;
+    text-decoration: none;
   }
   .project-links svg {
     width: var(--icon-md);
     height: auto;
     fill: var(--text);
-    transition: fill var(--transition-ease);
+    transition: fill var(--transition-fast);
   }
   .project-links {
     margin-top: var(--space-sm);
@@ -73,7 +76,7 @@ const technologies = await getEntries(project.data.technologies)
     display: inline;
   }
   .link-secondary:hover svg {
-    stroke: var(--primary);
+    stroke: var(--accent);
     cursor: pointer;
   }
 </style>
