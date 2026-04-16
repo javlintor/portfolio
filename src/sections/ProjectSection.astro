@@ -1,14 +1,16 @@
 ---
 import Section from '../components/Section.astro'
 import ProjectCard from '../components/ProjectCard.astro'
-import { getCollection, type CollectionEntry } from 'astro:content'
+import { getCollection } from 'astro:content'
 
-const projects = (await getCollection('projects')).filter(p => !p.data.is_hidden)
+const projects = (await getCollection('projects')).filter(
+  (p) => !p.data.is_hidden
+)
 ---
 
 <Section title="Projects" id="projects">
   <div class="project-gallery">
-    {projects.map((project: CollectionEntry<'projects'>) => <ProjectCard project={project} />)}
+    {projects.map((project) => <ProjectCard project={project} />)}
   </div>
 </Section>
 <style>

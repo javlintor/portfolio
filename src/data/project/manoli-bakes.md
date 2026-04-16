@@ -5,7 +5,6 @@ description: "Short Project description"
 technologies:
 - nvim
 - django
-is_hidden: true
 ---
 # My First Blog Post
 
@@ -29,4 +28,5 @@ I will finish the Astro tutorial, and then keep adding more posts. Watch this sp
 def func(a: str, b: int) -> None
     return a
 ```
+
 [this is a link](foo)

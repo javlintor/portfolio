@@ -1,9 +1,5 @@
 ---
 import { Image } from 'astro:assets'
-import type { CollectionEntry } from 'astro:content'
-interface Props {
-  technology: CollectionEntry<'technologies'>
-}
 
 const { technology } = Astro.props
 const foregroundColor = technology.data.foregroundColor

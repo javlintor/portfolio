@@ -70,7 +70,7 @@
   background: var(--bg-surface);
   padding: 0.15em 0.4em;
   border-radius: var(--radius);
-  font-size: 0.9em;
+  font-size: 1em;
 }
 
 /* Code blocks */
@@ -95,6 +95,20 @@
   margin: var(--space-md) auto;
   display: block;
   border-radius: var(--radius);
+}
+
+/* Links */
+.markdown a {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  font-weight: 500;
+  transition: color var(--transition-fast);
+}
+
+.markdown a:hover {
+  color: var(--accent);
 }
 
 /* Horizontal rule */

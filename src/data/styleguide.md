@@ -1,6 +1,5 @@
 # Styleguide
 
-
 ---
 
 # Heading 1
@@ -191,7 +190,3 @@ Monospace Text wrapped in "pre" tags:
 | Division 1     | Division 2     | Division 3     |
 
 ---
-
-# Media and Form Elements
-
-The remaining sections contain elements that cannot be represented in markdown. Please consult [the HTML version](https://github.com/bryanbraun/poor-mans-styleguide/blob/gh-pages/index.html), to see these elements.
