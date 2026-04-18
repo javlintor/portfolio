@@ -6,7 +6,7 @@ const foregroundColor = technology.data.foregroundColor
 const backgroundColor = technology.data.backgroundColor
 ---
 
-<a class="badge" href={technology.data.link}>
+<a class="badge" href={technology.data.link} transition:name="hero">
   <Image src={technology.data.icon} alt={`${technology.data.label} logo`} />
   <span>{technology.data.label}</span>
 </a>

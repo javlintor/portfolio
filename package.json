@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "@fontsource-variable/noto-sans-jp": "^5.0.20",
-    "astro": "^6.1.7"
+    "astro": "^6.1.7",
+    "rehype-slug": "^6.0.0"
   },
   "devDependencies": {
     "prettier": "^3.8.3",

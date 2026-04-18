@@ -1,6 +1,7 @@
 ---
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
+import { ClientRouter } from 'astro:transitions'
 
 import '../styles/global.css'
 const { title, description } = Astro.props
@@ -15,6 +16,7 @@ const { title, description } = Astro.props
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <ClientRouter />
     <script is:inline>
       ;(function () {
         const saved = localStorage.getItem('theme')
@@ -22,10 +24,7 @@ const { title, description } = Astro.props
           .matches
           ? 'light'
           : 'dark'
-        document.documentElement.setAttribute(
-          'data-theme',
-          saved || preferred,
-        )
+        document.documentElement.setAttribute('data-theme', saved || preferred)
       })()
     </script>
   </head>

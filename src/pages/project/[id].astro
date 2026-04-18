@@ -1,7 +1,9 @@
 ---
 import Badge from '../../components/Badge.astro'
+import TableOfContents from '../../components/TableOfContents.astro'
 import { getCollection, getEntries, render } from 'astro:content'
 import Layout from '../../layouts/Layout.astro'
+import GithubIcon from '../../images/github.svg'
 
 export async function getStaticPaths() {
   const projects = await getCollection('projects')
@@ -12,21 +14,169 @@ export async function getStaticPaths() {
 }
 
 const { project } = Astro.props
-const { Content } = await render(project)
+const { Content, headings } = await render(project)
 const technologies = await getEntries(project.data.technologies)
 import '../../styles/markdown.css'
+
+const hasTableOfContents = headings.length > 0
 ---
 
 <Layout
-  title=`Javier Linares Project`
-  description=`Details on the Project develop by Data Engineer`
+  title={`${project.data.title} | Javier Linares`}
+  description={project.data.description}
 >
-  <article class="markdown">
-    <Content />
-  </article>
-  <!-- prettier-ignore -->
-  {
-    // prettier-ignore
-    technologies.map((technology) => (<Badge technology={technology} />))
-  }
+  <div class="page-container">
+    <header class="page-header">
+      <h1>{project.data.title}</h1>
+      <p class="description">{project.data.description}</p>
+
+      <div class="meta">
+        <div class="badges">
+          {technologies.map((technology) => <Badge technology={technology} />)}
+        </div>
+
+        {
+          project.data.githubLink && (
+            <a
+              href={project.data.githubLink}
+              class="github-link interactive"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View project on GitHub"
+            >
+              <GithubIcon />
+            </a>
+          )
+        }
+      </div>
+    </header>
+
+    <div class="content-wrapper" data-has-toc={hasTableOfContents}>
+      <article class="markdown">
+        <Content />
+      </article>
+
+      {
+        hasTableOfContents && (
+          <aside class="toc-sidebar">
+            <div class="toc-sticky">
+              <TableOfContents headings={headings} />
+            </div>
+          </aside>
+        )
+      }
+    </div>
+  </div>
 </Layout>
+
+<style>
+  .page-container {
+    width: var(--section-width);
+    margin-inline: auto;
+    padding: var(--space-3xl) 0;
+  }
+
+  .page-header {
+    max-width: 70ch;
+    margin-bottom: var(--space-3xl);
+    padding-bottom: var(--space-xl);
+    border-bottom: var(--border);
+  }
+
+  h1 {
+    font-size: var(--font-h1);
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: var(--space-md);
+  }
+
+  .description {
+    font-size: var(--font-body);
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: var(--space-lg);
+  }
+
+  .meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-lg);
+    flex-wrap: wrap;
+  }
+
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+
+  .github-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+
+  .github-link :global(svg) {
+    width: var(--icon-lg);
+    height: auto;
+  }
+
+  /* Content layout with lateral ToC */
+  .content-wrapper {
+    display: grid;
+    grid-template-columns: minmax(0, 70ch);
+    gap: var(--space-3xl);
+  }
+
+  .content-wrapper[data-has-toc='true'] {
+    grid-template-columns: minmax(0, 70ch) 200px;
+  }
+
+  .markdown {
+    min-width: 0;
+  }
+
+  /* ToC sidebar - sticky within its column */
+  .toc-sidebar {
+    display: block;
+  }
+
+  .toc-sticky {
+    position: sticky;
+    top: var(--space-3xl);
+  }
+
+  /* Hide ToC on smaller screens */
+  @media (max-width: 1024px) {
+    .content-wrapper[data-has-toc='true'] {
+      grid-template-columns: minmax(0, 70ch);
+    }
+
+    .toc-sidebar {
+      display: none;
+    }
+  }
+
+  /* Mobile adjustments */
+  @media (max-width: 640px) {
+    .page-container {
+      padding: var(--space-xl) 0;
+    }
+
+    .page-header {
+      margin-bottom: var(--space-xl);
+      padding-bottom: var(--space-lg);
+    }
+
+    .meta {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .github-link {
+      margin-top: var(--space-sm);
+    }
+  }
+</style>

@@ -16,9 +16,9 @@ const technologies = await getEntries(project.data.technologies)
         <LinkSecondaryIcon class="interactive" />
       </a>
     </h3>
-    {technologies.map((technology) => (
-      <Badge technology={technology} />
-    ))}
+    <div class="badges-container">
+      {technologies.map((technology) => <Badge technology={technology} />)}
+    </div>
   </div>
   <p>{project.data.description}</p>
   <div class="project-links">
@@ -80,5 +80,9 @@ const technologies = await getEntries(project.data.technologies)
   .link-secondary:hover svg {
     stroke: var(--accent);
     cursor: pointer;
+  }
+  .badges-container {
+    display: flex;
+    gap: var(--space-8);
   }
 </style>
