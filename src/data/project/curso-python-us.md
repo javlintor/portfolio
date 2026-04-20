@@ -1,6 +1,7 @@
 ---
 title: 'Curso Python US'
 githubLink: https://github.com/javlintor/curso-python-us
+projectLink: https://javlintor.github.io/curso-python-us/README.html
 description: 'Introduction to Python programming for Mathematics and Statistics students at University of Seville. Interactive notebooks with one-click Google Colab exercises.'
 technologies:
   - python

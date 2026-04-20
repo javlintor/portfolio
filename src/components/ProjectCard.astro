@@ -17,10 +17,19 @@ const technologies = await getEntries(project.data.technologies)
       </a>
     </h3>
     <div class="badges-container">
-      {technologies.map((technology) => <Badge technology={technology} />)}
+      {
+        technologies.map((technology) => (
+          <Badge
+            technology={technology}
+            transitionName={`badge-${project.id}-${technology.id}`}
+          />
+        ))
+      }
     </div>
   </div>
-  <p>{project.data.description}</p>
+  <p transition:name={`project-description-${project.id}`}>
+    {project.data.description}
+  </p>
   <div class="project-links">
     <a href={project.data.githubLink}>
       <GithubIcon class="interactive" />

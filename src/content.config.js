@@ -2,10 +2,6 @@ import { defineCollection, reference, z } from 'astro:content'
 
 import { glob } from 'astro/loaders'
 
-const blog = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/data/blog' }),
-})
-
 const technologies = defineCollection({
   loader: glob({ base: './src/data/technology', pattern: '**/*.md' }),
   schema: ({ image }) =>
@@ -24,9 +20,10 @@ const projects = defineCollection({
     title: z.string(),
     description: z.string(),
     githubLink: z.string(),
+    projectLink: z.string().optional(),
     technologies: z.array(reference('technologies')),
     is_hidden: z.boolean().default(false),
   }),
 })
 
-export const collections = { projects, technologies, blog }
+export const collections = { projects, technologies }

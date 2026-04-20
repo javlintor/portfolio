@@ -4,6 +4,7 @@ import TableOfContents from '../../components/TableOfContents.astro'
 import { getCollection, getEntries, render } from 'astro:content'
 import Layout from '../../layouts/Layout.astro'
 import GithubIcon from '../../images/github.svg'
+import LinkIcon from '../../images/link.svg'
 
 export async function getStaticPaths() {
   const projects = await getCollection('projects')
@@ -27,27 +28,56 @@ const hasTableOfContents = headings.length > 0
 >
   <div class="page-container">
     <header class="page-header">
-      <h1>{project.data.title}</h1>
-      <p class="description">{project.data.description}</p>
+      <h1 transition:name={`project-title-${project.id}`}>
+        {project.data.title}
+      </h1>
+      <p
+        class="description"
+        transition:name={`project-description-${project.id}`}
+      >
+        {project.data.description}
+      </p>
 
       <div class="meta">
         <div class="badges">
-          {technologies.map((technology) => <Badge technology={technology} />)}
+          {
+            technologies.map((technology) => (
+              <Badge
+                technology={technology}
+                transitionName={`badge-${project.id}-${technology.id}`}
+              />
+            ))
+          }
         </div>
 
-        {
-          project.data.githubLink && (
-            <a
-              href={project.data.githubLink}
-              class="github-link interactive"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="View project on GitHub"
-            >
-              <GithubIcon />
-            </a>
-          )
-        }
+        <div class="links">
+          {
+            project.data.projectLink && (
+              <a
+                href={project.data.projectLink}
+                class="project-link interactive"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View live project"
+              >
+                <LinkIcon />
+              </a>
+            )
+          }
+          {
+            project.data.githubLink && (
+              <a
+                href={project.data.githubLink}
+                class="github-link interactive"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View project on GitHub"
+              >
+                <GithubIcon />
+              </a>
+            )
+          }
+        </div>
       </div>
     </header>
 
@@ -111,14 +141,23 @@ const hasTableOfContents = headings.length > 0
     gap: var(--space-sm);
   }
 
-  .github-link {
+  .links {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    flex-shrink: 0;
+  }
+
+  .github-link,
+  .project-link {
     display: flex;
     align-items: center;
     text-decoration: none;
     flex-shrink: 0;
   }
 
-  .github-link :global(svg) {
+  .github-link :global(svg),
+  .project-link :global(svg) {
     width: var(--icon-lg);
     height: auto;
   }
@@ -175,7 +214,7 @@ const hasTableOfContents = headings.length > 0
       align-items: flex-start;
     }
 
-    .github-link {
+    .links {
       margin-top: var(--space-sm);
     }
   }

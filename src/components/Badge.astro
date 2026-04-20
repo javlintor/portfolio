@@ -1,12 +1,12 @@
 ---
 import { Image } from 'astro:assets'
 
-const { technology } = Astro.props
+const { technology, transitionName } = Astro.props
 const foregroundColor = technology.data.foregroundColor
 const backgroundColor = technology.data.backgroundColor
 ---
 
-<a class="badge" href={technology.data.link} transition:name="hero">
+<a class="badge" href={technology.data.link} transition:name={transitionName}>
   <Image src={technology.data.icon} alt={`${technology.data.label} logo`} />
   <span>{technology.data.label}</span>
 </a>
