@@ -159,9 +159,18 @@ const hasTableOfContents = headings.length > 0
   .github-link :global(svg),
   .project-link :global(svg) {
     width: var(--icon-lg);
-    height: auto;
+    height: var(--icon-lg);
   }
 
+  .project-link svg {
+    fill: var(--bg);
+    stroke: var(--text);
+  }
+
+  .project-link:hover svg {
+    stroke: var(--accent);
+    cursor: pointer;
+  }
   /* Content layout with lateral ToC */
   .content-wrapper {
     display: grid;
