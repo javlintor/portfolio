@@ -5,6 +5,7 @@ import { getCollection, getEntries, render } from 'astro:content'
 import Layout from '../../layouts/Layout.astro'
 import GithubIcon from '../../images/github.svg'
 import LinkIcon from '../../images/link.svg'
+import { marked } from 'marked'
 
 export async function getStaticPaths() {
   const projects = await getCollection('projects')
@@ -17,6 +18,7 @@ export async function getStaticPaths() {
 const { project } = Astro.props
 const { Content, headings } = await render(project)
 const technologies = await getEntries(project.data.technologies)
+const descriptionHtml = marked.parseInline(project.data.description)
 import '../../styles/markdown.css'
 
 const hasTableOfContents = headings.length > 0
@@ -34,9 +36,8 @@ const hasTableOfContents = headings.length > 0
       <p
         class="description"
         transition:name={`project-description-${project.id}`}
-      >
-        {project.data.description}
-      </p>
+        set:html={descriptionHtml}
+      />
 
       <div class="meta">
         <div class="badges">
@@ -50,34 +51,34 @@ const hasTableOfContents = headings.length > 0
           }
         </div>
 
-        <div class="links">
-          {
-            project.data.projectLink && (
-              <a
-                href={project.data.projectLink}
-                class="project-link interactive"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="View live project"
-              >
-                <LinkIcon />
-              </a>
-            )
-          }
-          {
-            project.data.githubLink && (
-              <a
-                href={project.data.githubLink}
-                class="github-link interactive"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="View project on GitHub"
-              >
-                <GithubIcon />
-              </a>
-            )
-          }
-        </div>
+        {
+          (project.data.projectLink || project.data.githubLink) && (
+            <div class="links">
+              {project.data.projectLink && (
+                <a
+                  href={project.data.projectLink}
+                  class="project-link interactive"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="View live project"
+                >
+                  <LinkIcon class="icon-md" />
+                </a>
+              )}
+              {project.data.githubLink && (
+                <a
+                  href={project.data.githubLink}
+                  class="github-link interactive"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="View project on GitHub"
+                >
+                  <GithubIcon class="icon-md" />
+                </a>
+              )}
+            </div>
+          )
+        }
       </div>
     </header>
 
@@ -124,15 +125,13 @@ const hasTableOfContents = headings.length > 0
     font-size: var(--font-body);
     color: var(--text-secondary);
     line-height: 1.5;
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-xl);
   }
 
   .meta {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--space-lg);
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: var(--space-xl);
   }
 
   .badges {
@@ -144,8 +143,7 @@ const hasTableOfContents = headings.length > 0
   .links {
     display: flex;
     align-items: center;
-    gap: var(--space-sm);
-    flex-shrink: 0;
+    gap: var(--space-md);
   }
 
   .github-link,
@@ -153,24 +151,11 @@ const hasTableOfContents = headings.length > 0
     display: flex;
     align-items: center;
     text-decoration: none;
-    flex-shrink: 0;
+    padding: var(--space-sm);
+    margin: calc(-1 * var(--space-sm));
+    border-radius: var(--space-xs);
   }
 
-  .github-link :global(svg),
-  .project-link :global(svg) {
-    width: var(--icon-lg);
-    height: var(--icon-lg);
-  }
-
-  .project-link svg {
-    fill: var(--bg);
-    stroke: var(--text);
-  }
-
-  .project-link:hover svg {
-    stroke: var(--accent);
-    cursor: pointer;
-  }
   /* Content layout with lateral ToC */
   .content-wrapper {
     display: grid;
@@ -216,15 +201,6 @@ const hasTableOfContents = headings.length > 0
     .page-header {
       margin-bottom: var(--space-xl);
       padding-bottom: var(--space-lg);
-    }
-
-    .meta {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .links {
-      margin-top: var(--space-sm);
     }
   }
 </style>

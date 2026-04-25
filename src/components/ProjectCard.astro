@@ -2,18 +2,20 @@
 import Badge from './Badge.astro'
 import GithubIcon from '../images/github.svg'
 import { getEntries } from 'astro:content'
+import { marked } from 'marked'
 
 import LinkIcon from '../images/link.svg'
 const { project } = Astro.props
 const technologies = await getEntries(project.data.technologies)
+const descriptionHtml = marked.parseInline(project.data.description)
 ---
 
 <div class="project-card">
   <div class="project-card-title">
     <h3>
       {project.data.title}
-      <a href=`project/${project.id}` class="link-secondary">
-        <LinkIcon class="interactive" />
+      <a href=`project/${project.id}` class="title-link interactive">
+        <LinkIcon class="icon-sm" />
       </a>
     </h3>
     <div class="badges-container">
@@ -27,12 +29,15 @@ const technologies = await getEntries(project.data.technologies)
       }
     </div>
   </div>
-  <p transition:name={`project-description-${project.id}`}>
-    {project.data.description}
-  </p>
+
+  <p
+    class="description"
+    transition:name={`project-description-${project.id}`}
+    set:html={descriptionHtml}
+  />
   <div class="project-links">
-    <a href={project.data.githubLink}>
-      <GithubIcon class="interactive" />
+    <a href={project.data.githubLink} class="interactive">
+      <GithubIcon class="icon-md" />
     </a>
   </div>
 </div>
@@ -64,31 +69,17 @@ const technologies = await getEntries(project.data.technologies)
     display: flex;
     text-decoration: none;
   }
-  .project-links svg {
-    width: var(--icon-md);
-    height: auto;
-    fill: var(--text);
-    transition: fill var(--transition-fast);
+  a.title-link {
+    display: none;
+    align-items: center;
+    vertical-align: -0.15em;
+  }
+  .project-card:hover a.title-link {
+    display: inline-flex;
   }
   .project-links {
     margin-top: var(--space-sm);
     display: flex;
-  }
-  .link-icon {
-    display: none;
-  }
-  .link-icon svg {
-    width: var(--icon-sm);
-    height: auto;
-    fill: var(--bg);
-    stroke: var(--text);
-  }
-  .project-card:hover .link-icon {
-    display: inline;
-  }
-  .link-icon:hover svg {
-    stroke: var(--accent);
-    cursor: pointer;
   }
   .badges-container {
     display: flex;

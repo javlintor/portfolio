@@ -176,15 +176,24 @@ img {
 }
 
 .interactive {
-  fill: var(--text);
-  transition:
-    fill var(--transition-fast),
-    stroke var(--transition-fast),
-    color var(--transition-fast);
+  color: var(--text);
+  transition: color var(--transition-fast);
 }
 .interactive:hover {
-  fill: var(--accent);
   color: var(--accent);
+}
+
+svg.icon-sm {
+  width: var(--icon-sm);
+  height: var(--icon-sm);
+}
+svg.icon-md {
+  width: var(--icon-md);
+  height: var(--icon-md);
+}
+svg.icon-lg {
+  width: var(--icon-lg);
+  height: var(--icon-lg);
 }
 
 mark {

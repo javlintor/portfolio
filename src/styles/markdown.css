@@ -202,9 +202,19 @@
 .markdown img {
   max-width: 100%;
   height: auto;
-  margin: var(--space-lg) 0;
   border-radius: var(--radius);
   display: block;
+}
+
+.markdown figure {
+  margin: var(--space-xl) 0;
+}
+
+.markdown figcaption {
+  margin-top: var(--space-sm);
+  font-size: var(--font-caption);
+  color: var(--text-secondary);
+  text-align: center;
 }
 
 /* Strong and emphasis */
