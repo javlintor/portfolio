@@ -27,6 +27,13 @@ const { title, description } = Astro.props
         document.documentElement.setAttribute('data-theme', saved || preferred)
       })()
     </script>
+    <script>
+      document.addEventListener('astro:before-swap', (e) => {
+        const theme = document.documentElement.getAttribute('data-theme')
+        if (theme)
+          e.newDocument.documentElement.setAttribute('data-theme', theme)
+      })
+    </script>
   </head>
   <body>
     <Header />
