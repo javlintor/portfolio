@@ -4,7 +4,7 @@ import TableOfContents from '../../components/TableOfContents.astro'
 import { getCollection, getEntries, render } from 'astro:content'
 import Layout from '../../layouts/Layout.astro'
 import GithubIcon from '../../images/github.svg'
-import LinkIcon from '../../images/link.svg'
+import RocketIcon from '../../images/rocket.svg'
 import { marked } from 'marked'
 
 export async function getStaticPaths() {
@@ -62,7 +62,7 @@ const hasTableOfContents = headings.length > 0
                   rel="noopener noreferrer"
                   aria-label="View live project"
                 >
-                  <LinkIcon class="icon-md" />
+                  <RocketIcon class="icon-md" />
                 </a>
               )}
               {project.data.githubLink && (
